@@ -11,7 +11,11 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        lightgrey: "#f6f6f6",
       },
+      width: {
+        95: "95%",
+      }
     },
   },
   plugins: [],
