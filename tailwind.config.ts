@@ -12,9 +12,14 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
         lightgrey: "#f6f6f6",
+        primaria03: "#422556",
       },
       width: {
         95: "95%",
+      },
+      height: {
+        square: "747px",
+        footer: "682px"
       }
     },
   },

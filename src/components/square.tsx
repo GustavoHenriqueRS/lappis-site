@@ -1,7 +1,9 @@
-export default function Square(){
+import React from "react";
+
+export default function Square({children}:{children: React.ReactNode}){
     return(
-    <div className="w-95 h-3/4 bg-lightgrey flex z-0 rounded-xl ">
-        <h1>ooi</h1>
+    <div className="w-full h-square bg-lightgrey flex z-0 rounded-xl ">
+        {children}
     </div>
 )
 }
