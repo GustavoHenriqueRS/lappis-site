@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Orbitron";
+  src: url("./fonts/Orbitron.ttf");
+}
+
+@font-face {
+  font-family: "NotoSans";
+  src: url("./fonts/NotoSans.ttf");
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
