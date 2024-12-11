@@ -28,13 +28,14 @@ export default async function SessionComponent({
       <div className="mt-32">
         <p className="text-2xl text-black font-notoSans">{description}</p>
       </div>
-      <div className="flex w-full items-center justify-center gap-16">
+      <div className="flex w-full items-center justify-center gap-16  pb-9">
         {partnerships.map((partner, index) => (
           <Card
             key={index}
             title={partner.title}
             description={partner.description}
             color={cardColors}
+            hoverColor={color}
             img={fototeste}
           />
         ))}

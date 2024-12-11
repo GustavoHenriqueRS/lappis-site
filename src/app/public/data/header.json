@@ -3,27 +3,19 @@
     "ipea": {
       "title": "IPEA",
       "description": "Instituto de Pesquisa Econômica Aplicada",
-      "url_image": "../foto-teste.png",
-      "competencias": [
-        "Competência 1",
-        "Competência 2",
-        "Competência 3"
-      ]
+      "url_image": "@/public/foto-teste.png",
+      "competencias": ["Competência 1", "Competência 2", "Competência 3"]
     },
     "Brasil Participativo": {
       "title": "Brasil Participativo",
       "description": "Tecnologia que aproxima cidadãos e promove a participação democrática.",
-      "url_image": "../foto-teste.png",
-      "competencias": [
-        "Competência 1",
-        "Competência 2",
-        "Competência 3"
-      ]
+      "url_image": "@/public/foto-teste.png",
+      "competencias": ["Competência 1", "Competência 2", "Competência 3"]
     },
     "Mec Energia": {
       "title": "Mec Energia",
       "description": "Iniciativas inovadoras para tornar escolas mais sustentáveis ​​e eficientes.",
-      "url_image": "../foto-teste.png",
+      "url_image": "@/public/foto-teste.png",
       "competencias": [
         "Competência 1",
         "Competência 2",
