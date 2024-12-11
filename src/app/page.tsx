@@ -41,21 +41,21 @@ export default async function Home() {
       <SessionComponent
         title="Parcerias"
         description="Conectamos tecnologia aberta às necessidades da sociedade, promovendo inovação, impacto social e mudanças reais."
-        color="bg-primaria06"
+        hoverColor="bg-secundaria500Laranja"
         cardColors="bg-primaria06"
         key={1}
       />
       <SessionComponent
         title="Formação"
         description="Conectamos tecnologia aberta às necessidades da sociedade, promovendo inovação, impacto social e mudanças reais."
-        color="bg-primaria05"
+        hoverColor="bg-secundaria500Lilas"
         cardColors="bg-primaria05"
         key={2}
       />
       <SessionComponent
         title="Metodologia"
         description="Conectamos tecnologia aberta às necessidades da sociedade, promovendo inovação, impacto social e mudanças reais."
-        color="bg-primaria04"
+        hoverColor="bg-secundaria500Magenta"
         cardColors="bg-primaria04"
         key={3}
       />

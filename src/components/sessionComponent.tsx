@@ -7,14 +7,14 @@ import { promises as fs } from "fs";
 interface SessionComponentProps {
   title: string;
   description: string;
-  color: string;
+  hoverColor: string;
   cardColors: string;
 }
 
 export default async function SessionComponent({
   title,
   description,
-  color,
+  hoverColor,
   cardColors,
 }: SessionComponentProps) {
   const file = await fs.readFile("./src/app/public/data/header.json", "utf8");
@@ -24,7 +24,7 @@ export default async function SessionComponent({
 
   return (
     <Square>
-      <SquareTitle title={title} color={color} />
+      <SquareTitle title={title} color={cardColors} />
       <div className="mt-32">
         <p className="text-2xl text-black font-notoSans">{description}</p>
       </div>
@@ -35,7 +35,7 @@ export default async function SessionComponent({
             title={partner.title}
             description={partner.description}
             color={cardColors}
-            hoverColor={color}
+            hoverColor={hoverColor}
             img={fototeste}
           />
         ))}
