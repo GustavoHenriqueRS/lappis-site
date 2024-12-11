@@ -8,8 +8,8 @@ export default function BackgroundSquares() {
       <div className="absolute ">
         <Image src={purpleShape} alt="Icon" width={250} height={250} />
       </div>
-      <div className="absolute right-0">
-        <Image src={yellowShape} alt="Icon" width={700} height={700} />
+      <div className="absolute right-0 top-0">
+        <Image src={yellowShape} alt="Icon" width={400} height={400} />
       </div>
     </>
   );

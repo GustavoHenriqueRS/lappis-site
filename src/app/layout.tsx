@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-// import BackgroundSquares from "@/components/backgroundSquares";
+import BackgroundSquares from "@/components/backgroundSquares";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 
@@ -31,7 +31,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white `}
       >
-        {/* <BackgroundSquares /> */}
+        <BackgroundSquares />
         <Header />
         <div className="mt-36">{children}</div>
         <Footer />

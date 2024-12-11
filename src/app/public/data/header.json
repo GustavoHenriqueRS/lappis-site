@@ -1,27 +1,32 @@
 {
-  "parcerias": {
-    "ipea": {
-      "title": "IPEA",
-      "description": "Instituto de Pesquisa Econômica Aplicada",
-      "url_image": "@/public/foto-teste.png",
-      "competencias": ["Competência 1", "Competência 2", "Competência 3"]
+  "content": {
+    "Início": {
+      "title": "Início",
+      "href": "/"
     },
-    "Brasil Participativo": {
-      "title": "Brasil Participativo",
-      "description": "Tecnologia que aproxima cidadãos e promove a participação democrática.",
-      "url_image": "@/public/foto-teste.png",
-      "competencias": ["Competência 1", "Competência 2", "Competência 3"]
+    "Formação": {
+      "title": "Formação",
+      "href": "/formacao"
     },
-    "Mec Energia": {
-      "title": "Mec Energia",
-      "description": "Iniciativas inovadoras para tornar escolas mais sustentáveis ​​e eficientes.",
-      "url_image": "@/public/foto-teste.png",
-      "competencias": [
-        "Competência 1",
-        "Competência 2",
-        "Competência 3",
-        "Competência 4"
-      ]
+    "Parceiras": {
+      "title": "Parceiras",
+      "href": "/parceiras"
+    },
+    "Pesquisa": {
+      "title": "Pesquisa",
+      "href": "/pesquisa"
+    },
+    "Contato": {
+      "title": "Contato",
+      "href": "/contato"
+    },
+    "Notícias": {
+      "title": "Notícias",
+      "href": "/noticias"
+    },
+    "Sobre": {
+      "title": "Sobre",
+      "href": "/sobre"
     }
   }
 }

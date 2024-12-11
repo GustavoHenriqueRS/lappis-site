@@ -4,44 +4,55 @@ import fototeste from "../app/public/foto-teste.png";
 import Card from "./card";
 import { promises as fs } from "fs";
 
-interface Partner {
+interface Card {
   title: string;
   description: string;
+  url_image: string;
+  competencias: string[];
 }
 
-interface SessionComponentProps {
+interface Session {
   title: string;
   description: string;
   hoverColor: string;
   cardColors: string;
-  partners: Partner[];
+  cards: Card[];
+}
+
+interface SessionComponentProps {
+  sessionFile: string;
 }
 
 export default async function SessionComponent({
-  title,
-  description,
-  hoverColor,
-  cardColors,
+  sessionFile,
 }: SessionComponentProps) {
-  const file = await fs.readFile("./src/app/public/data/header.json", "utf8");
+  const file = await fs.readFile(
+    "./src/app/public/data/" + sessionFile,
+    "utf8"
+  );
   const data = JSON.parse(file);
 
-  const partnerships: Partner[] = Object.values(data.parcerias);
+  const session: Session = data;
+  console.log(session);
+  const cards: Card[] = Object.values(session.cards);
+  console.log(cards);
 
   return (
     <Square>
-      <SquareTitle title={title} color={cardColors} />
+      <SquareTitle title={session.title} color={session.cardColors} />
       <div className="mt-32">
-        <p className="text-2xl text-black font-notoSans">{description}</p>
+        <p className="text-2xl text-black font-notoSans">
+          {session.description}
+        </p>
       </div>
       <div className="flex w-full items-center justify-center gap-16  pb-9">
-        {partnerships.map((partner, index) => (
+        {cards.map((card, index) => (
           <Card
             key={index}
-            title={partner.title}
-            description={partner.description}
-            color={cardColors}
-            hoverColor={hoverColor}
+            title={card.title}
+            description={card.description}
+            color={session.cardColors}
+            hoverColor={session.hoverColor}
             img={fototeste}
           />
         ))}

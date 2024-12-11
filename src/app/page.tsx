@@ -5,6 +5,8 @@ import logoAntiga from "../app/public/logoAntiga.png";
 import Image from "next/image";
 
 export default async function Home() {
+  const sessionFiles = ["parcerias.json", "metodologia.json", "formacao.json"];
+
   return (
     <div className="-z-10 flex items-center justify-center flex-col mt-24 gap-16">
       <Square>
@@ -38,27 +40,9 @@ export default async function Home() {
           </div>
         </div>
       </Square>
-      <SessionComponent
-        title="Parcerias"
-        description="Conectamos tecnologia aberta às necessidades da sociedade, promovendo inovação, impacto social e mudanças reais."
-        hoverColor="bg-secundaria500Laranja"
-        cardColors="bg-primaria06"
-        key={1}
-      />
-      <SessionComponent
-        title="Formação"
-        description="Conectamos tecnologia aberta às necessidades da sociedade, promovendo inovação, impacto social e mudanças reais."
-        hoverColor="bg-secundaria500Lilas"
-        cardColors="bg-primaria05"
-        key={2}
-      />
-      <SessionComponent
-        title="Metodologia"
-        description="Conectamos tecnologia aberta às necessidades da sociedade, promovendo inovação, impacto social e mudanças reais."
-        hoverColor="bg-secundaria500Magenta"
-        cardColors="bg-primaria04"
-        key={3}
-      />
+      {sessionFiles.map((session, index) => (
+        <SessionComponent key={index} sessionFile={sessionFiles[index]} />
+      ))}
     </div>
   );
 }
