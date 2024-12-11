@@ -4,11 +4,17 @@ import fototeste from "../app/public/foto-teste.png";
 import Card from "./card";
 import { promises as fs } from "fs";
 
+interface Partner {
+  title: string;
+  description: string;
+}
+
 interface SessionComponentProps {
   title: string;
   description: string;
   hoverColor: string;
   cardColors: string;
+  partners: Partner[];
 }
 
 export default async function SessionComponent({
@@ -20,7 +26,7 @@ export default async function SessionComponent({
   const file = await fs.readFile("./src/app/public/data/header.json", "utf8");
   const data = JSON.parse(file);
 
-  const partnerships = Object.values(data.parcerias);
+  const partnerships: Partner[] = Object.values(data.parcerias);
 
   return (
     <Square>
