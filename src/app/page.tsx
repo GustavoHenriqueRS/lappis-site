@@ -5,7 +5,7 @@ import logoAntiga from "../app/public/logoAntiga.png";
 import Image from "next/image";
 
 export default async function Home() {
-  const sessionFiles = ["parcerias.json", "metodologia.json", "formacao.json"];
+  const sessionFiles = ["parcerias.json", "formacao.json", "metodologia.json"];
 
   return (
     <div className="-z-10 flex items-center justify-center flex-col mt-24 gap-16">

@@ -33,9 +33,7 @@ export default async function SessionComponent({
   const data = JSON.parse(file);
 
   const session: Session = data;
-  console.log(session);
   const cards: Card[] = Object.values(session.cards);
-  console.log(cards);
 
   return (
     <Square>

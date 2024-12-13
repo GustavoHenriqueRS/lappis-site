@@ -1,8 +1,8 @@
 {
   "title": "Metodologia",
   "description": "Conectamos tecnologia aberta às necessidades da sociedade, promovendo inovação, impacto social e mudanças reais.",
-  "hoverColor": "bg-secundaria500Laranja",
-  "cardColors": "bg-primaria06",
+  "hoverColor": "secundaria500Laranja",
+  "cardColors": "primaria04",
   "cards": {
     "ipea": {
       "title": "IPEA",
