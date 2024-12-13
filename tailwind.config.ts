@@ -17,6 +17,8 @@ export default {
     "bg-secundaria900Laranja", "bg-secundaria900Lilas",
     "bg-secundaria900Magenta", "bg-secundaria900Roxo",
     "bg-secundaria900Azul", "bg-secundaria900Amarelo",
+    "hover:bg-secundaria500Laranja", "hover:bg-secundaria500Lilas",
+    "hover:bg-secundaria500Magenta", "hover:bg-secundaria500Roxo",
   ],
   theme: {
     extend: {
