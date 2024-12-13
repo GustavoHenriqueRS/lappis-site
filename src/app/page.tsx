@@ -5,6 +5,7 @@ import Square from "@/components/square";
 import logoGrande from "../app/public/logoGrande.png";
 import logoAntiga from "../app/public/logoAntiga.png";
 import Image from "next/image";
+import ListSessionComponent from "@/components/listSessionComponent";
 
 async function getSessionData() {
   const sessionFiles = ["parcerias.json", "formacao.json", "metodologia.json"];
@@ -56,6 +57,9 @@ export default async function Home() {
       </Square>
       {sessionData.map((session, index) => (
         <SessionComponent key={index} session={session} />
+      ))}
+      {sessionData.map((listSession, index)=> (
+        <ListSessionComponent key={index} listSession={listSession} />
       ))}
     </div>
   );
