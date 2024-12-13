@@ -34,6 +34,28 @@
         "Competência 3",
         "Competência 4"
       ]
+    },
+    "Mec Energia 2": {
+      "title": "Mec Energia2",
+      "description": "Iniciativas inovadoras para tornar escolas mais sustentáveis ​​e eficientes.",
+      "url_image": "@/public/foto-teste.png",
+      "competencias": [
+        "Competência 1",
+        "Competência 2",
+        "Competência 3",
+        "Competência 4"
+      ]
+    },
+    "Mec Energia 3": {
+      "title": "Mec Energia333",
+      "description": "Iniciativas inovadoras para tornar escolas mais sustentáveis ​​e eficientes.",
+      "url_image": "@/public/foto-teste.png",
+      "competencias": [
+        "Competência 1",
+        "Competência 2",
+        "Competência 3",
+        "Competência 4"
+      ]
     }
   }
 }

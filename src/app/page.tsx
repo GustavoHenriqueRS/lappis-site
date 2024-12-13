@@ -1,11 +1,25 @@
+import path from "path";
+import fs from "fs/promises";
 import SessionComponent from "@/components/sessionComponent";
 import Square from "@/components/square";
 import logoGrande from "../app/public/logoGrande.png";
 import logoAntiga from "../app/public/logoAntiga.png";
 import Image from "next/image";
 
-export default function Home() {
+async function getSessionData() {
   const sessionFiles = ["parcerias.json", "formacao.json", "metodologia.json"];
+  const sessionData = await Promise.all(
+    sessionFiles.map(async (file) => {
+      const filePath = path.join(process.cwd(), "src/app/public/data", file);
+      const fileContent = await fs.readFile(filePath, "utf8");
+      return JSON.parse(fileContent);
+    })
+  );
+  return sessionData;
+}
+
+export default async function Home() {
+  const sessionData = await getSessionData();
 
   return (
     <div className="-z-10 flex items-center justify-center flex-col mt-24 gap-16">
@@ -40,8 +54,8 @@ export default function Home() {
           </div>
         </div>
       </Square>
-      {sessionFiles.map((session, index) => (
-        <SessionComponent key={index} sessionFile={sessionFiles[index]} />
+      {sessionData.map((session, index) => (
+        <SessionComponent key={index} session={session} />
       ))}
     </div>
   );
