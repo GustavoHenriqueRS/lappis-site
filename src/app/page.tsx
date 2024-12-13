@@ -4,7 +4,7 @@ import logoGrande from "../app/public/logoGrande.png";
 import logoAntiga from "../app/public/logoAntiga.png";
 import Image from "next/image";
 
-export default async function Home() {
+export default function Home() {
   const sessionFiles = ["parcerias.json", "formacao.json", "metodologia.json"];
 
   return (
