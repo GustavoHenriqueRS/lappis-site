@@ -66,6 +66,9 @@ export default {
         orbitron: ["Orbitron"],
         notoSans: ["NotoSans"],
       },
+      opacity: {
+        "95": "0.95",
+      },
     },
   },
   plugins: [],
