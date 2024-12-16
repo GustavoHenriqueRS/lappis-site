@@ -47,7 +47,7 @@ export default function Page() {
                 <div className="px-6 py-20 bg-secundaria700Magenta rounded-xl text-white font-orbitron text-3xl text-center mb-8">
                   MISSÃO
                 </div>
-                <p className="text-secundaria900Magenta text-justify mb-2">
+                <p className="text-secundaria900Magenta text-center mb-2 w-full">
                   Promover a cultura do software livre e a inclusão digital por meio de
                   inovação e pesquisa, capacitando jovens, mulheres e grupos
                   sub-representados, para liderar mudanças sociais e tecnológicas na
@@ -59,7 +59,7 @@ export default function Page() {
                 <div className="px-6 py-20 bg-secundaria700Magenta rounded-xl text-white font-orbitron text-3xl text-center mb-8">
                   VISÃO
                 </div>
-                <p className="text-secundaria900Magenta text-justify mb-2">
+                <p className="text-secundaria900Magenta mb-2 text-center w-full">
                   Ser referência em software livre na América Latina, liderando em
                   pesquisa, inovação e capacitação de profissionais colaborativos e
                   éticos, alinhados aos princípios de liberdade, inclusão e impacto
@@ -71,7 +71,7 @@ export default function Page() {
                 <div className="px-6 py-20 bg-secundaria700Magenta rounded-xl text-white font-orbitron text-3xl text-center mb-8">
                   VALORES
                 </div>
-                <p className="text-secundaria900Magenta text-justify mb-2">
+                <p className="text-secundaria900Magenta text-center mb-2 w-full">
                   Liberdade, inclusão, colaboração, inovação, aprendizado e diversidade.
                 </p>
               </div>
