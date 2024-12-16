@@ -46,34 +46,36 @@ export default function Page() {
               <div className="px-24 py-16 bg-secundaria700Magenta rounded-xl text-white font-orbitron">
                 Missão
               </div>
-              Promover a cultura do software livre e a inclusão digital por meio
-              de inovação e pesquisa, capacitando jovens, mulheres e grupos
-              sub-representados, para liderar mudanças sociais e tecnológicas na
-              América do Sul, com foco na colaboração e impacto transformador.
+                <p className="text-secundaria900Magenta">
+                Promover a cultura do software livre e a inclusão digital por meio
+                de inovação e pesquisa, capacitando jovens, mulheres e grupos
+                sub-representados, para liderar mudanças sociais e tecnológicas na
+                América do Sul, com foco na colaboração e impacto transformador.
+                </p>
             </div>
             <div className="flex flex-col gap-3 px-12 border-x-2 border-x-secundaria700Magenta">
               <div className="px-24 py-16 bg-secundaria700Magenta rounded-xl text-white font-orbitron">
                 Missão
               </div>
-              Promover a cultura do software livre e a inclusão digital por meio
-              de inovação e pesquisa, capacitando jovens, mulheres e grupos
-              sub-representados, para liderar mudanças sociais e tecnológicas na
-              América do Sul, com foco na colaboração e impacto transformador.
+                <p className="text-secundaria900Magenta">
+                Ser referência em software livre na América Latina, liderando em pesquisa, 
+                inovação e capacitação de profissionais colaborativos e éticos, alinhados aos princípios de liberdade, 
+                inclusão e impacto tecnológico.
+                </p>
             </div>
             <div className="flex flex-col gap-3 pl-12">
               <div className="px-24 py-16 bg-secundaria700Magenta rounded-xl text-white font-orbitron">
                 Missão
               </div>
-              Promover a cultura do software livre e a inclusão digital por meio
-              de inovação e pesquisa, capacitando jovens, mulheres e grupos
-              sub-representados, para liderar mudanças sociais e tecnológicas na
-              América do Sul, com foco na colaboração e impacto transformador.
+                <p className="text-secundaria900Magenta">
+                Liberdade, inclusão, colaboração, inovação, aprendizado e diversidade.
+                </p>
             </div>
           </div>
         </div>
         <div>
-          <h1>História</h1>
-          <p>
+        <h1 className="text-4xl mb-6">História</h1>
+        <p className="text-2xl">
             O Lab Livre nasceu em 2012 como parte de um projeto acadêmico e de
             pesquisa da Universidade de Brasília (UnB), vinculado à Faculdade
             UnB Gama (FCTE). Desde o início, nossa essência sempre foi sobre
