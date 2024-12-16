@@ -40,39 +40,43 @@ export default function Page() {
           </p>
         </div>
         <div className="flex flex-col gap-6">
-          <h1 className="text-4xl">Missão, Visão e Valores</h1>
-          <div className="flex flex-row">
-            <div className="flex flex-col gap-3 pr-12">
-              <div className="px-24 py-16 bg-secundaria700Magenta rounded-xl text-white font-orbitron">
-                Missão
-              </div>
-                <p className="text-secundaria900Magenta">
-                Promover a cultura do software livre e a inclusão digital por meio
-                de inovação e pesquisa, capacitando jovens, mulheres e grupos
-                sub-representados, para liderar mudanças sociais e tecnológicas na
-                América do Sul, com foco na colaboração e impacto transformador.
+            <h1 className="text-4xl">Missão, Visão e Valores</h1>
+            <div className="flex flex-row justify-between">
+              {/* Card Missão */}
+              <div className="flex flex-col flex-1 gap-3 pr-6">
+                <div className="px-6 py-20 bg-secundaria700Magenta rounded-xl text-white font-orbitron text-3xl text-center mb-8">
+                  MISSÃO
+                </div>
+                <p className="text-secundaria900Magenta text-justify mb-2">
+                  Promover a cultura do software livre e a inclusão digital por meio de
+                  inovação e pesquisa, capacitando jovens, mulheres e grupos
+                  sub-representados, para liderar mudanças sociais e tecnológicas na
+                  América do Sul, com foco na colaboração e impacto transformador.
                 </p>
-            </div>
-            <div className="flex flex-col gap-3 px-12 border-x-2 border-x-secundaria700Magenta">
-              <div className="px-24 py-16 bg-secundaria700Magenta rounded-xl text-white font-orbitron">
-                Missão
               </div>
-                <p className="text-secundaria900Magenta">
-                Ser referência em software livre na América Latina, liderando em pesquisa, 
-                inovação e capacitação de profissionais colaborativos e éticos, alinhados aos princípios de liberdade, 
-                inclusão e impacto tecnológico.
+              {/* Card Visão */}
+              <div className="flex flex-col flex-1 gap-3 px-6 border-x-2 border-x-secundaria700Magenta">
+                <div className="px-6 py-20 bg-secundaria700Magenta rounded-xl text-white font-orbitron text-3xl text-center mb-8">
+                  VISÃO
+                </div>
+                <p className="text-secundaria900Magenta text-justify mb-2">
+                  Ser referência em software livre na América Latina, liderando em
+                  pesquisa, inovação e capacitação de profissionais colaborativos e
+                  éticos, alinhados aos princípios de liberdade, inclusão e impacto
+                  tecnológico.
                 </p>
-            </div>
-            <div className="flex flex-col gap-3 pl-12">
-              <div className="px-24 py-16 bg-secundaria700Magenta rounded-xl text-white font-orbitron">
-                Missão
               </div>
-                <p className="text-secundaria900Magenta">
-                Liberdade, inclusão, colaboração, inovação, aprendizado e diversidade.
+              {/* Card Valores */}
+              <div className="flex flex-col flex-1 gap-3 pl-6">
+                <div className="px-6 py-20 bg-secundaria700Magenta rounded-xl text-white font-orbitron text-3xl text-center mb-8">
+                  VALORES
+                </div>
+                <p className="text-secundaria900Magenta text-justify mb-2">
+                  Liberdade, inclusão, colaboração, inovação, aprendizado e diversidade.
                 </p>
+              </div>
             </div>
           </div>
-        </div>
         <div>
         <h1 className="text-4xl mb-6">História</h1>
         <p className="text-2xl">
