@@ -23,7 +23,7 @@ export default async function Home() {
   const sessionData = await getSessionData();
 
   return (
-    <div className="-z-10 flex items-center justify-center flex-col mt-24 gap-16">
+    <div className="flex items-center justify-center flex-col mt-24 gap-16">
       <Square>
         <div className="p-16 flex flex-col items-center gap-8">
           <div className="flex flex-row gap-56">
@@ -58,7 +58,7 @@ export default async function Home() {
       {sessionData.map((session, index) => (
         <SessionComponent key={index} session={session} />
       ))}
-      {sessionData.map((listSession, index)=> (
+      {sessionData.map((listSession, index) => (
         <ListSessionComponent key={index} listSession={listSession} />
       ))}
     </div>

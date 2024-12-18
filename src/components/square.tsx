@@ -9,7 +9,7 @@ export default function Square({
 }) {
   return (
     <div
-      className={`bg-lightgrey flex z-0 rounded-xl w-95 items-center flex-col ${extraStyle}`}
+      className={`bg-lightgrey flex z-10 rounded-xl w-95 items-center flex-col ${extraStyle}`}
     >
       {children}
     </div>

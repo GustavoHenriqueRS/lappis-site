@@ -3,7 +3,7 @@ import SquareTitle from "@/components/squareTitle";
 
 export default function Page() {
   return (
-    <div className="-z-10 flex items-center justify-center flex-col mt-24 gap-16">
+    <div className="flex items-center justify-center flex-col mt-24 gap-16">
       <Square extraStyle="bg-opacity-95 text-black px-28 gap-12">
         <SquareTitle title={"Sobre"} color={"bg-red-600"} />
         <div className="mt-32 flex flex-col gap-6">
@@ -40,46 +40,48 @@ export default function Page() {
           </p>
         </div>
         <div className="flex flex-col gap-6">
-            <h1 className="text-4xl">Missão, Visão e Valores</h1>
-            <div className="flex flex-row justify-between">
-              {/* Card Missão */}
-              <div className="flex flex-col flex-1 gap-3 pr-6">
-                <div className="px-6 py-20 bg-secundaria700Magenta rounded-xl text-white font-orbitron text-3xl text-center mb-8">
-                  MISSÃO
-                </div>
-                <p className="text-secundaria900Magenta text-center mb-2 w-full">
-                  Promover a cultura do software livre e a inclusão digital por meio de
-                  inovação e pesquisa, capacitando jovens, mulheres e grupos
-                  sub-representados, para liderar mudanças sociais e tecnológicas na
-                  América do Sul, com foco na colaboração e impacto transformador.
-                </p>
+          <h1 className="text-4xl">Missão, Visão e Valores</h1>
+          <div className="flex flex-row justify-between">
+            {/* Card Missão */}
+            <div className="flex flex-col flex-1 gap-3 pr-6">
+              <div className="px-6 py-20 bg-secundaria700Magenta rounded-xl text-white font-orbitron text-3xl text-center mb-8">
+                MISSÃO
               </div>
-              {/* Card Visão */}
-              <div className="flex flex-col flex-1 gap-3 px-6 border-x-2 border-x-secundaria700Magenta">
-                <div className="px-6 py-20 bg-secundaria700Magenta rounded-xl text-white font-orbitron text-3xl text-center mb-8">
-                  VISÃO
-                </div>
-                <p className="text-secundaria900Magenta mb-2 text-center w-full">
-                  Ser referência em software livre na América Latina, liderando em
-                  pesquisa, inovação e capacitação de profissionais colaborativos e
-                  éticos, alinhados aos princípios de liberdade, inclusão e impacto
-                  tecnológico.
-                </p>
+              <p className="text-secundaria900Magenta text-center mb-2 w-full">
+                Promover a cultura do software livre e a inclusão digital por
+                meio de inovação e pesquisa, capacitando jovens, mulheres e
+                grupos sub-representados, para liderar mudanças sociais e
+                tecnológicas na América do Sul, com foco na colaboração e
+                impacto transformador.
+              </p>
+            </div>
+            {/* Card Visão */}
+            <div className="flex flex-col flex-1 gap-3 px-6 border-x-2 border-x-secundaria700Magenta">
+              <div className="px-6 py-20 bg-secundaria700Magenta rounded-xl text-white font-orbitron text-3xl text-center mb-8">
+                VISÃO
               </div>
-              {/* Card Valores */}
-              <div className="flex flex-col flex-1 gap-3 pl-6">
-                <div className="px-6 py-20 bg-secundaria700Magenta rounded-xl text-white font-orbitron text-3xl text-center mb-8">
-                  VALORES
-                </div>
-                <p className="text-secundaria900Magenta text-center mb-2 w-full">
-                  Liberdade, inclusão, colaboração, inovação, aprendizado e diversidade.
-                </p>
+              <p className="text-secundaria900Magenta mb-2 text-center w-full">
+                Ser referência em software livre na América Latina, liderando em
+                pesquisa, inovação e capacitação de profissionais colaborativos
+                e éticos, alinhados aos princípios de liberdade, inclusão e
+                impacto tecnológico.
+              </p>
+            </div>
+            {/* Card Valores */}
+            <div className="flex flex-col flex-1 gap-3 pl-6">
+              <div className="px-6 py-20 bg-secundaria700Magenta rounded-xl text-white font-orbitron text-3xl text-center mb-8">
+                VALORES
               </div>
+              <p className="text-secundaria900Magenta text-center mb-2 w-full">
+                Liberdade, inclusão, colaboração, inovação, aprendizado e
+                diversidade.
+              </p>
             </div>
           </div>
+        </div>
         <div>
-        <h1 className="text-4xl mb-6">História</h1>
-        <p className="text-2xl">
+          <h1 className="text-4xl mb-6">História</h1>
+          <p className="text-2xl">
             O Lab Livre nasceu em 2012 como parte de um projeto acadêmico e de
             pesquisa da Universidade de Brasília (UnB), vinculado à Faculdade
             UnB Gama (FCTE). Desde o início, nossa essência sempre foi sobre
