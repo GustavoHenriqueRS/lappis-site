@@ -8,6 +8,8 @@ import chevRonRight from "../app/public/chevronRight.svg";
 import Image from "next/image";
 import Card from "./card";
 import { useState } from "react";
+import React from "react";
+import { createMotionComponent } from "@/utils/createMotionComponent";
 
 interface Card {
   title: string;
@@ -28,6 +30,13 @@ interface SessionComponentProps {
   session: Session;
 }
 
+const AnimatedSquare = createMotionComponent(Square, "AnimatedSquare");
+
+const AnimatedSquareTitle = createMotionComponent(
+  SquareTitle,
+  "AnimatedSquareTitle"
+);
+
 export default function SessionComponent({ session }: SessionComponentProps) {
   const cards: Card[] = Object.values(session.cards);
   const [startIndex, setStartIndex] = useState(0);
@@ -47,8 +56,20 @@ export default function SessionComponent({ session }: SessionComponentProps) {
   };
 
   return (
-    <Square>
-      <SquareTitle title={session.title} color={session.cardColors} />
+    <AnimatedSquare
+      initial={{ x: 200, opacity: 0 }}
+      whileInView={{ x: 0, opacity: 1 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.5 }}
+    >
+      <AnimatedSquareTitle
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, amount: 0.5 }}
+        transition={{ delay: 0.7, duration: 0.5 }}
+        title={session.title}
+        color={session.cardColors}
+      />
       <div className="mt-32">
         <p className="text-2xl text-black font-notoSans">
           {session.description}
@@ -90,6 +111,6 @@ export default function SessionComponent({ session }: SessionComponentProps) {
           )}
         </div>
       </div>
-    </Square>
+    </AnimatedSquare>
   );
 }

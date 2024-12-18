@@ -5,7 +5,7 @@ import yellowShape from "../app/public/formaamarela.svg";
 export default function BackgroundSquares() {
   return (
     <>
-      <div className="absolute ">
+      <div className="absolute -z-10">
         <Image src={purpleShape} alt="Icon" width={250} height={250} />
       </div>
       <div className="absolute right-0 top-0">
