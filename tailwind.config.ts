@@ -26,6 +26,7 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
         lightgrey: "#f6f6f6",
+        pretinho: "#010101",
         //primaria
         primaria01: "#f9a10e",
         primaria02: "#17CEE6",

@@ -1,5 +1,7 @@
 import Square from "@/components/square";
 import SquareTitle from "@/components/squareTitle";
+import galera from "../public/galera.png";
+import Image from "next/image";
 
 export default function Page() {
   return (
@@ -8,7 +10,7 @@ export default function Page() {
         <SquareTitle title={"Sobre"} color={"bg-red-600"} />
         <div className="mt-32 flex flex-col gap-6">
           <h1 className="text-4xl">Sobre nós</h1>
-          <p className="text-2xl">
+          <p className="text-2xl text-pretinho">
             O Lab Livre é um laboratório multidisciplinar da Universidade de
             Brasília (FCTE) focado em inovação tecnológica , pesquisa científica
             e desenvolvimento de software livre com impacto social. Criamos
@@ -29,7 +31,7 @@ export default function Page() {
         </div>
         <div className="flex flex-col gap-6">
           <h1 className="text-4xl">Metodologia</h1>
-          <p className="text-2xl">
+          <p className="text-2xl text-pretinho">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
             dapibus est ultrices ante vestibulum, a facilisis tortor aliquet.
             Cras bibendum turpis lorem, vel aliquet magna aliquam vel. Nam
@@ -81,7 +83,7 @@ export default function Page() {
         </div>
         <div>
           <h1 className="text-4xl mb-6">História</h1>
-          <p className="text-2xl">
+          <p className="text-2xl text-pretinho">
             O Lab Livre nasceu em 2012 como parte de um projeto acadêmico e de
             pesquisa da Universidade de Brasília (UnB), vinculado à Faculdade
             UnB Gama (FCTE). Desde o início, nossa essência sempre foi sobre
@@ -94,6 +96,18 @@ export default function Page() {
             da América do Sul. Acreditamos que a tecnologia só faz sentido
             quando é acessível e inclusiva, resolvendo desafios sociais.
           </p>
+          <Image
+          src={galera}
+          alt="galera"
+          style={{
+            height: '404px', 
+            width: '100%',
+            margin: '0 auto',
+            borderRadius: '12px',
+            marginTop: '24px',
+            marginBottom: '32px',
+          }}
+          />
         </div>
       </Square>
     </div>
