@@ -6,7 +6,7 @@ import Image from "next/image";
 export default function Page() {
   return (
     <div className="flex items-center justify-center flex-col mt-24 gap-16">
-      <Square extraStyle="bg-opacity-95 text-black px-28 gap-12">
+      <Square className="bg-opacity-95 text-black px-28 gap-12">
         <SquareTitle title={"Sobre"} color={"bg-red-600"} />
         <div className="mt-32 flex flex-col gap-6">
           <h1 className="text-4xl">Sobre nós</h1>
@@ -97,16 +97,16 @@ export default function Page() {
             quando é acessível e inclusiva, resolvendo desafios sociais.
           </p>
           <Image
-          src={galera}
-          alt="galera"
-          style={{
-            height: '404px', 
-            width: '100%',
-            margin: '0 auto',
-            borderRadius: '12px',
-            marginTop: '24px',
-            marginBottom: '32px',
-          }}
+            src={galera}
+            alt="galera"
+            style={{
+              height: "404px",
+              width: "100%",
+              margin: "0 auto",
+              borderRadius: "12px",
+              marginTop: "24px",
+              marginBottom: "32px",
+            }}
           />
         </div>
       </Square>

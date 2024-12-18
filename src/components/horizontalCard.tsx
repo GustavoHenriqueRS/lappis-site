@@ -1,9 +1,9 @@
 import Image from "next/image";
 import { ImageProps } from "next/image";
-import Square from "./square";
 
 interface HorizontalCardProps {
   color: string | undefined;
+  hoverColor?: string;
   title: string;
   description: string;
   img: ImageProps["src"];
@@ -11,19 +11,23 @@ interface HorizontalCardProps {
 
 export default function HorizontalCard({
   color,
+  hoverColor,
   title,
   description,
   img,
 }: HorizontalCardProps) {
+  const cardColor = color ? color : "secundaria05";
+  const cardHoverColor = hoverColor ? hoverColor : "primaria05";
+
   return (
-    <Square>
-      <div className={`${color} w-4/5 h-64 rounded-xl p-6 gap-6 text-white`}>
-        <Image src={img} alt="imagem do card" width={200} height={200} />
-        <div className="text-white">
-          <h2>{title}</h2>
-          <p>{description}</p>
-        </div>
+    <div
+      className={`bg-${cardColor} flex w-4/5 h-64 rounded-xl p-6 gap-6 text-white hover:bg-${cardHoverColor}`}
+    >
+      <Image src={img} alt="imagem do card" width={297} height={217} />
+      <div className="text-white font-orbitron flex flex-col gap-6">
+        <h2 className="text-3xl">{title}</h2>
+        <p className="text-2xl font-light">{description}</p>
       </div>
-    </Square>
+    </div>
   );
 }

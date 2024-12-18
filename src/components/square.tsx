@@ -2,17 +2,17 @@ import React from "react";
 
 export default function Square({
   children,
-  extraStyle,
+  className,
   ref,
 }: {
   children?: React.ReactNode;
-  extraStyle?: string;
+  className?: React.ComponentProps<"div">["className"];
   ref?: React.Ref<HTMLDivElement>;
 }) {
   return (
     <div
       ref={ref}
-      className={`bg-lightgrey flex z-10 rounded-xl w-95 items-center flex-col ${extraStyle}`}
+      className={`bg-lightgrey flex z-10 rounded-xl w-95 items-center flex-col ${className}`}
     >
       {children}
     </div>

@@ -1,22 +1,20 @@
-"use client";
-
 import HorizontalCard from "./horizontalCard";
 import Square from "./square";
 import fototeste from "../app/public/foto-teste.png";
 
 interface HorizontalCard {
-  color: string;
   title: string;
   description: string;
   url_image: string;
+  competencias: string[];
 }
 
 interface ListSession {
-  horizontalCards: HorizontalCard[];
+  cards: HorizontalCard[];
   title: string;
   description: string;
   hoverColor: string;
-  horizontalCardColors: string;
+  cardColors: string;
 }
 
 interface ListSessionComponentProps {
@@ -26,21 +24,27 @@ interface ListSessionComponentProps {
 export default function ListSessionComponent({
   listSession,
 }: ListSessionComponentProps) {
-  // const horizontalCards: HorizontalCard[] = listSession.horizontalCards ? Object.values(listSession.horizontalCards) : [];
-  // const [startIndex, setStartIndex] = useState(0);
-  // const [nextIndex, setNextIndex] = useState(0);
+  const horizontalCards: HorizontalCard[] = listSession.cards
+    ? Object.values(listSession.cards)
+    : [];
 
-  // const horizontalCardsToShow = 3;
-  // const maxIndex = horizontalCards.length - horizontalCardsToShow;
+  const horizontalCardsToShow = 3;
 
   return (
     <Square>
-      <HorizontalCard
-        color={listSession.horizontalCardColors}
-        title={listSession.title}
-        description={listSession.description}
-        img={fototeste}
-      />
+      {horizontalCards.map((horizontalCard, index) => {
+        if (index < horizontalCardsToShow) {
+          return (
+            <HorizontalCard
+              key={index}
+              color={listSession.cardColors}
+              title={horizontalCard.title}
+              description={horizontalCard.description}
+              img={fototeste}
+            />
+          );
+        }
+      })}
     </Square>
   );
 }

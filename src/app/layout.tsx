@@ -15,6 +15,11 @@ const geistMono = localFont({
   variable: "--font-geist-mono",
   weight: "100 900",
 });
+const orbitron = localFont({
+  src: "./fonts/Orbitron.ttf",
+  variable: "--font-orbitron",
+  weight: "100 900",
+});
 
 export const metadata: Metadata = {
   title: "Lappis",
@@ -29,7 +34,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white `}
+        className={`${geistSans.variable} ${geistMono.variable} ${orbitron.variable} antialiased bg-white `}
       >
         <BackgroundSquares />
         <Header />
