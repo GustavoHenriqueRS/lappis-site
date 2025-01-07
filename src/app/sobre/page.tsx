@@ -6,8 +6,8 @@ import Image from "next/image";
 export default function Page() {
   return (
     <div className="flex items-center justify-center flex-col mt-24 gap-16">
-      <Square className="bg-opacity-95 text-black px-28 gap-12">
-        <SquareTitle title={"Sobre"} color={"bg-red-600"} />
+      <Square className=" text-black px-28 gap-12">
+        <SquareTitle title={"Sobre"} color={"primaria04"} />
         <div className="mt-32 flex flex-col gap-6">
           <h1 className="text-4xl">Sobre nós</h1>
           <p className="text-2xl text-pretinho">
@@ -100,7 +100,7 @@ export default function Page() {
             src={galera}
             alt="galera"
             style={{
-              height: "404px",
+              height: "465px",
               width: "100%",
               margin: "0 auto",
               borderRadius: "12px",
