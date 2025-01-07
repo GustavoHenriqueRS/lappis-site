@@ -44,7 +44,7 @@ export default async function Home() {
         </div>
       </Square>
       {sessionData.map((session, index) => (
-        <SessionComponent key={index} session={session} />
+        <SessionComponent key={index} session={session}/>
       ))}
       {sessionData.map((listSession, index) => (
         <ListSessionComponent key={index} listSession={listSession} />

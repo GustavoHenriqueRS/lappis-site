@@ -21,7 +21,7 @@ export default function HorizontalCard({
 
   return (
     <div
-      className={`bg-${cardColor} flex w-4/5 h-64 rounded-xl p-6 gap-6 text-white hover:bg-${cardHoverColor}`}
+      className={`bg-${cardColor} flex w-4/5 h-64 rounded-xl p-6 gap-6 text-white hover:bg-${cardHoverColor} my-8`}
     >
       <Image src={img} alt="imagem do card" width={297} height={217} />
       <div className="text-white font-orbitron flex flex-col gap-6">

@@ -24,7 +24,7 @@ export default async function Header() {
           <Link
             key={index}
             href={header[menuButton].href}
-            className="text-md xl:text-2xl font-bold"
+            className="text-md xl:text-2xl font-bold hover:bg-sky-700"
           >
             {header[menuButton].title}
           </Link>

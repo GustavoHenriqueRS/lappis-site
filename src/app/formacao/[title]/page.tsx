@@ -3,7 +3,7 @@ import path from "path";
 import fs from "fs/promises";
 import SquareTitle from "@/components/squareTitle";
 import Image from "next/image";
-import galera from "../../public/foto-teste.png";
+import galera from "../../public/meninaIPEA.jpg";
 
 interface IFormacao {
   title: string;
@@ -42,7 +42,7 @@ export default async function Formacao({
 
   return (
     <div className="flex items-center justify-center flex-col mt-24 gap-16">
-      <Square className="bg-opacity-95 text-black px-28 gap-8">
+      <Square className=" text-black px-28 gap-8">
         <SquareTitle title={"Formação"} color={"primaria03"} />
         <div className="mt-28 flex flex-row gap-6 w-full justify-between">
           <div className="flex flex-col gap-6">

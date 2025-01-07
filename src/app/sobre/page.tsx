@@ -102,6 +102,7 @@ export default function Page() {
             style={{
               height: "465px",
               width: "100%",
+              objectFit: "cover",
               margin: "0 auto",
               borderRadius: "12px",
               marginTop: "24px",
