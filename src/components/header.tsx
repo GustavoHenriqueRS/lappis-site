@@ -22,12 +22,13 @@ export default async function Header() {
       <div className="flex items-center gap-12 text-black">
         {Object.keys(header).map((menuButton, index) => (
           <Link
-            key={index}
-            href={header[menuButton].href}
-            className="text-md xl:text-2xl font-bold hover:bg-sky-700"
-          >
-            {header[menuButton].title}
-          </Link>
+          key={index}
+          href={header[menuButton].href}
+          className="text-md xl:text-2xl font-bold hover:text-primaria04"
+        >
+          {header[menuButton].title}
+        </Link>
+        
         ))}
       </div>
     </div>
