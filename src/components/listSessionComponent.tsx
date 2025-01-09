@@ -31,7 +31,7 @@ export default function ListSessionComponent({
   const horizontalCardsToShow = 3;
 
   return (
-    <Square>
+    <Square className="py-8 flex flex-col gap-8">
       {horizontalCards.map((horizontalCard, index) => {
         if (index < horizontalCardsToShow) {
           return (
@@ -41,6 +41,7 @@ export default function ListSessionComponent({
               title={horizontalCard.title}
               description={horizontalCard.description}
               img={fototeste}
+              className="w-4/5"
             />
           );
         }

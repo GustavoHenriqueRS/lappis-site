@@ -19,6 +19,16 @@ export default {
     "bg-secundaria900Azul", "bg-secundaria900Amarelo",
     "hover:bg-secundaria500Laranja", "hover:bg-secundaria500Lilas",
     "hover:bg-secundaria500Magenta", "hover:bg-secundaria500Roxo",
+    "hover:bg-primaria01", "hover:bg-primaria02", "hover:bg-primaria03", "hover:bg-primaria04",
+    "hover:bg-primaria05", "hover:bg-primaria06", "hover:bg-secundaria500Laranja",
+    "hover:bg-secundaria500Lilas", "hover:bg-secundaria500Magenta", "hover:bg-secundaria500Roxo",
+    "hover:bg-secundaria500Azul", "hover:bg-secundaria500Amarelo",
+    "hover:bg-secundaria700Laranja", "hover:bg-secundaria700Lilas",
+    "hover:bg-secundaria700Magenta", "hover:bg-secundaria700Roxo",
+    "hover:bg-secundaria700Azul", "hover:bg-secundaria700Amarelo",
+    "hover:bg-secundaria900Laranja", "hover:bg-secundaria900Lilas",
+    "hover:bg-secundaria900Magenta", "hover:bg-secundaria900Roxo",
+    "hover:bg-secundaria900Azul", "hover:bg-secundaria900Amarelo", "hover:text-black", "hover:text-white",
   ],
   theme: {
     extend: {
@@ -34,6 +44,7 @@ export default {
         primaria04: "#CF2B6B",
         primaria05: "#5C348B",
         primaria06: "#f26f1c",
+        //secundaria500
         secundaria500Laranja: "#DE600A",
         secundaria500Lilas: "#9F72CE",
         secundaria500Magenta: "#E94B81",
@@ -54,6 +65,7 @@ export default {
         secundaria900Roxo: "#453152",
         secundaria900Azul: "#004351",
         secundaria900Amarelo: "#5C2E00",
+        lila: "#5B416C",
       },
       width: {
         95: "95%",

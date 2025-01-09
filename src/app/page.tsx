@@ -21,19 +21,21 @@ export default async function Home() {
 
   return (
     <div className="flex items-center justify-center flex-col mt-8 gap-16">
-      <Square className="p-16 flex flex-col items-center gap-8">
-        <div className="flex justify-center w-full">
-          <video className="w-full h-[400px] rounded-[12px]" controls>
-            <source src="/videoteste.mp4" type="video/mp4" />
+      <Square className="p-8 flex flex-col items-center gap-8">
+        <div className="flex justify-center w-full h-[700px] relative">
+          <video
+            className="rounded-[12px] w-full object-cover"
+            autoPlay
+            loop
+            playsInline
+            muted
+          >
+            <source
+              src="https://videos.pexels.com/video-files/3251841/3251841-uhd_2560_1440_25fps.mp4"
+              type="video/mp4"
+            />
           </video>
-        </div>
-        <div className="text-black flex flex-col gap-10 items-center">
-          <h1 className="text-4xl">Centro de competências em Software livre</h1>
-          <p className="text-2xl text-center">
-            Acreditamos no poder do conhecimento compartilhado para transformar
-            vidas. Conecte-se, colabore e seja parte da mudança!
-          </p>
-          <button className="bg-primaria04 text-white text-2xl px-16 py-5 rounded-xl hover:bg-secundaria700Magenta">
+          <button className="absolute bottom-8 bg-primaria04 text-white text-2xl px-16 py-5 rounded-xl hover:bg-secundaria700Magenta">
             Conhecer projetos
           </button>
         </div>

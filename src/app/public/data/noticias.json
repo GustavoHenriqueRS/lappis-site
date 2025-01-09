@@ -1,0 +1,44 @@
+[
+  {
+    "title": "Lançamento do Framework OpenDev",
+    "description": "O OpenDev é um novo framework open source que promete facilitar o desenvolvimento colaborativo em projetos de tecnologia.",
+    "img": "https://example.com/images/opendev-framework.jpg",
+    "href": "https://example.com/noticias/opendev-framework"
+  },
+  {
+    "title": "Workshop sobre Git e GitHub",
+    "description": "Participe do workshop gratuito para aprender a colaborar em projetos open source utilizando Git e GitHub.",
+    "img": "https://example.com/images/git-github-workshop.jpg",
+    "href": "https://example.com/eventos/git-github-workshop"
+  },
+  {
+    "title": "Comunidade Open Source cresce 20% em 2024",
+    "description": "Relatório mostra aumento significativo de contribuições para projetos de código aberto em todo o mundo.",
+    "img": "https://example.com/images/open-source-growth.jpg",
+    "href": "https://example.com/noticias/comunidade-open-source-2024"
+  },
+  {
+    "title": "Hackathon de Desenvolvimento Sustentável",
+    "description": "Inscreva-se no hackathon que busca soluções open source para os Objetivos de Desenvolvimento Sustentável da ONU.",
+    "img": "https://example.com/images/hackathon-sustentavel.jpg",
+    "href": "https://example.com/eventos/hackathon-sustentavel"
+  },
+  {
+    "title": "Ferramentas de Automação Open Source",
+    "description": "Conheça as melhores ferramentas open source para automatizar fluxos de trabalho e aumentar a produtividade.",
+    "img": "https://example.com/images/automation-tools.jpg",
+    "href": "https://example.com/artigos/ferramentas-automacao"
+  },
+  {
+    "title": "Contribua com o Projeto LibreDocs",
+    "description": "O LibreDocs está em busca de colaboradores para melhorar a documentação de projetos open source.",
+    "img": "https://example.com/images/libredocs-project.jpg",
+    "href": "https://example.com/projetos/libredocs"
+  },
+  {
+    "title": "Novo curso: Introdução ao Desenvolvimento Open Source",
+    "description": "Curso gratuito que ensina os primeiros passos para se tornar um desenvolvedor open source.",
+    "img": "https://example.com/images/open-source-course.jpg",
+    "href": "https://example.com/cursos/introducao-open-source"
+  }
+]
