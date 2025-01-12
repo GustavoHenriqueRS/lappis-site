@@ -16,8 +16,6 @@ export default function Card({
   hoverColor,
   img,
 }: CardProps) {
-  console.log(hoverColor);
-
   return (
     <div
       className={`p-6 bg-${color} hover:bg-${hoverColor} text-white rounded-xl  flex flex-col items-center  text-center mt-9 h-card shadow-xl w-full`}

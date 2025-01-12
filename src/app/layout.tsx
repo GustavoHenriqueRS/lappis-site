@@ -38,7 +38,7 @@ export default function RootLayout({
       >
         <BackgroundSquares />
         <Header />
-        <div className="mt-36">{children}</div>
+        <div className="mt-36 overflow-x-hidden">{children}</div>
         <Footer />
       </body>
     </html>
