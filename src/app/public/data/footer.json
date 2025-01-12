@@ -1,0 +1,83 @@
+[
+  {
+    "title": "INÍCIO",
+    "items": [
+      {
+        "label": "Formação",
+        "url": "#"
+      },
+      {
+        "label": "Projetos",
+        "url": "#"
+      },
+      {
+        "label": "Publicações",
+        "url": "#"
+      },
+      {
+        "label": "Nosso time",
+        "url": "#"
+      },
+      {
+        "label": "Parceiros",
+        "url": "#"
+      }
+    ]
+  },
+  {
+    "title": "PROJETOS",
+    "items": [
+      {
+        "label": "Brasil Participativo",
+        "url": "#"
+      },
+      {
+        "label": "GSOC",
+        "url": "#"
+      },
+      {
+        "label": "IPEA",
+        "url": "#"
+      },
+      {
+        "label": "BOSS",
+        "url": "#"
+      }
+    ]
+  },
+  {
+    "title": "PUBLICAÇÕES",
+    "items": [
+      {
+        "label": "Lorem Ipsum",
+        "url": "#"
+      }
+    ]
+  },
+  {
+    "title": "SOBRE",
+    "items": [
+      {
+        "label": "Quem somos",
+        "url": "#"
+      },
+      {
+        "label": "Quem somos",
+        "url": "#"
+      }
+    ]
+  },
+  {
+    "title": "CONTATO",
+    "items": [
+      {
+        "label": "lab.livre@",
+        "url": "#"
+      },
+      {
+        "label": "@lablivre",
+        "url": "#"
+      }
+    ]
+  }
+]
