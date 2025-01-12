@@ -51,7 +51,7 @@ export default async function Footer() {
         <Image src={lappisLogo} alt="Logo Lappis" width={200} height={200} />
         <div className="flex gap-8 items-center">
           <p className="text-xl font-bold">Redes Sociais</p>
-          <div className="flex gap-4">
+          <div className="flex gap-4 h-8">
             <FontAwesomeIcon icon={faInstagram} size="2x" />
             <FontAwesomeIcon icon={faLinkedin} size="2x" />
           </div>
