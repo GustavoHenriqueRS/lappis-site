@@ -18,7 +18,7 @@ interface Header {
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
-  const header = headerData.content;
+  const header: Header = headerData.content;
 
   const toggleMenu: React.MouseEventHandler<HTMLButtonElement> = () => {
     setIsOpen(!isOpen);
