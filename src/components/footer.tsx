@@ -2,7 +2,8 @@ import path from "path";
 import fs from "fs/promises";
 import Link from "next/link";
 import unbLogo from "../app/public/logo_unb.png";
-import lappisLogo from "../app/public/logo.svg";
+import logo_lab_branca from "../app/public/logo_lab_branca.png";
+// import lappisLogo from "../app/public/logo.svg";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin, faInstagram } from "@fortawesome/free-brands-svg-icons";
@@ -48,7 +49,12 @@ export default async function Footer() {
       <div className="flex flex-col md:flex-row items-center justify-center gap-20 text-white py-12">
         <Image src={unbLogo} alt="Logo UnB" width={200} height={200} />
 
-        <Image src={lappisLogo} alt="Logo Lappis" width={200} height={200} />
+        <Image
+          src={logo_lab_branca}
+          alt="Logo Lappis"
+          width={200}
+          height={200}
+        />
         <div className="flex gap-8 items-center">
           <p className="text-xl font-bold">Redes Sociais</p>
           <div className="flex gap-4 h-8">

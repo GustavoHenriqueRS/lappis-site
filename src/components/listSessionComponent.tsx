@@ -38,6 +38,7 @@ export default function ListSessionComponent({
             <HorizontalCard
               key={index}
               color={listSession.cardColors}
+              hoverColor={listSession.hoverColor}
               title={horizontalCard.title}
               description={horizontalCard.description}
               img={fototeste}

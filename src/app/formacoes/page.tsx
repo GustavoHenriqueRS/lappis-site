@@ -34,8 +34,8 @@ export default function Formacoes() {
           {currentNews.map((news: INew, index: number) => (
             <HorizontalCard
               key={index}
-              color="primaria03"
-              hoverColor="secundaria700Roxo"
+              color="lila"
+              hoverColor="primaria05"
               title={news.title}
               description={news.description}
               img={galera}
@@ -47,8 +47,8 @@ export default function Formacoes() {
           currentPage={currentPage}
           totalPages={totalPages}
           onPageChange={onPageChange}
-          primaryColor="lila"
-          secondaryColor="primaria03"
+          primaryColor="primaria05"
+          secondaryColor="lila"
           textColor="white"
         />
       </Square>

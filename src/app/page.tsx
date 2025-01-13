@@ -20,7 +20,7 @@ export default async function Home() {
   const sessionData = await getSessionData();
 
   return (
-    <div className="flex items-center justify-center flex-col mt-8 gap-16">
+    <div className="flex items-center justify-center flex-col gap-16">
       <Square className="p-8 flex flex-col items-center gap-8">
         <div className="flex justify-center w-full h-[700px] relative">
           <video

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { ImageProps } from "next/image";
+import clsx from "clsx";
 
 interface HorizontalCardProps {
   color: string | undefined;
@@ -20,18 +21,34 @@ export default function HorizontalCard({
   href,
   className,
 }: HorizontalCardProps) {
-  const cardColor = color ? color : "secundaria05";
-  const cardHoverColor = hoverColor ? hoverColor : "primaria05";
+  const cardColor = color ? `bg-${color}` : "bg-secundaria05";
+  const hoverClass = hoverColor
+    ? `hover:bg-${hoverColor}`
+    : "hover:bg-primaria01";
 
   return (
     <a
       href={href ? href : "#"}
-      className={`bg-${cardColor} flex h-64 rounded-xl p-6 gap-6 text-white hover:bg-${cardHoverColor} ${className}`}
+      className={clsx(
+        `flex h-64 rounded-xl p-6 gap-6 text-white transition-colors duration-300`,
+        cardColor,
+        hoverClass,
+        className
+      )}
     >
-      <Image src={img} alt="imagem do card" width={297} height={217} />
+      <div className="relative w-[297px] h-[217px]">
+        <Image
+          src={img}
+          alt="imagem do card"
+          fill
+          className="rounded-lg object-cover"
+        />
+      </div>
       <div className="text-white font-orbitron flex flex-col gap-6">
-        <h2 className="text-3xl">{title}</h2>
-        <p className="text-2xl font-light">{description}</p>
+        <h2 className="text-xl md:text-3xl truncate">{title}</h2>
+        <p className="text-sm md:text-2xl font-light line-clamp-3">
+          {description}
+        </p>
       </div>
     </a>
   );

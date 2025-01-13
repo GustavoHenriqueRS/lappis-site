@@ -29,13 +29,13 @@ export default function Pesquisas() {
   return (
     <div className="flex items-center justify-center flex-col mt-24 gap-16">
       <Square className="text-black px-28 gap-8 pb-8">
-        <SquareTitle title={"Pesquisas"} color={"primaria05"} />
+        <SquareTitle title={"Pesquisas"} color={"primaria03"} />
         <div className="mt-36 flex flex-row gap-8 w-full flex-wrap justify-between">
           {currentNews.map((news: INew, index: number) => (
             <HorizontalCard
               key={index}
-              color="primaria03"
-              hoverColor="secundaria700Roxo"
+              color="secundaria700Roxo"
+              hoverColor="primaria03"
               title={news.title}
               description={news.description}
               img={galera}
@@ -47,8 +47,8 @@ export default function Pesquisas() {
           currentPage={currentPage}
           totalPages={totalPages}
           onPageChange={onPageChange}
-          primaryColor="secundaria700Lilas"
-          secondaryColor="primaria03"
+          primaryColor="primaria03"
+          secondaryColor="secundaria700Roxo"
           textColor="white"
         />
       </Square>
