@@ -9,6 +9,7 @@ interface INoticia {
   title: string;
   body: string;
   imgUrl: string;
+  id: number;
 }
 
 async function getSessionData() {
@@ -30,7 +31,9 @@ export default async function Page({
 
   const sessionData = await getSessionData();
 
-  const noticia: INoticia = sessionData.find((n) => n.id === Number(id));
+  const noticia: INoticia = sessionData.find(
+    (n: INoticia) => n.id === Number(id)
+  );
 
   return (
     <div className="flex items-center justify-center flex-col mt-24 gap-16">
