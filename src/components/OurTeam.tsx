@@ -1,7 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import HorizontalCard from "./horizontalCard";
+import React from "react";
 import Square from "./square";
 import SquareTitle from "./squareTitle";
 import fototeste from "../app/public/foto-teste.png";

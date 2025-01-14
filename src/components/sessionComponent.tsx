@@ -4,7 +4,6 @@ import Square from "./square";
 import SquareTitle from "./squareTitle";
 import fototeste from "../app/public/foto-teste.png";
 import { ChevronLeft, ChevronRight } from "./chevron";
-import Image from "next/image";
 import Card from "./card";
 import { createMotionComponent } from "@/utils/createMotionComponent";
 
