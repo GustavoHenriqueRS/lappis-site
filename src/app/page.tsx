@@ -3,6 +3,7 @@ import fs from "fs/promises";
 import SessionComponent from "@/components/sessionComponent";
 import Square from "@/components/square";
 import ListSessionComponent from "@/components/listSessionComponent";
+import OurTeam from "@/components/OurTeam";
 
 async function getSessionData() {
   const sessionFiles = ["parcerias.json", "formacao.json", "metodologia.json"];
@@ -47,6 +48,8 @@ export default async function Home() {
       {sessionData.map((listSession, index) => (
         <ListSessionComponent key={index} listSession={listSession} />
       ))}
+
+      <OurTeam />
     </div>
   );
 }

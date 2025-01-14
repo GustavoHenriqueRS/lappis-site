@@ -1,14 +1,11 @@
 "use client";
-
+import React, { useState, useEffect, useRef } from "react";
 import Square from "./square";
 import SquareTitle from "./squareTitle";
 import fototeste from "../app/public/foto-teste.png";
-import chevRonLeft from "../app/public/chevronLeft.svg";
-import chevRonRight from "../app/public/chevronRight.svg";
+import { ChevronLeft, ChevronRight } from "./chevron";
 import Image from "next/image";
 import Card from "./card";
-import { useState } from "react";
-import React from "react";
 import { createMotionComponent } from "@/utils/createMotionComponent";
 
 interface Card {
@@ -39,34 +36,45 @@ const AnimatedSquareTitle = createMotionComponent(
 
 export default function SessionComponent({ session }: SessionComponentProps) {
   const cards: Card[] = Object.values(session.cards);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [cardsToShow, setCardsToShow] = useState(3);
   const [startIndex, setStartIndex] = useState(0);
-  const [nextIndex, setNextIndex] = useState(0);
+  const [maxIndex, setMaxIndex] = useState(0);
+  const [cardWidth, setCardWidth] = useState(0);
 
-  const cardsToShow = 3;
-  const maxIndex = cards.length - cardsToShow;
+  useEffect(() => {
+    const updateLayout = () => {
+      const containerWidth = containerRef.current?.offsetWidth || 0;
+      const singleCardWidth = 312 + 56;
+      const visibleCards = Math.floor(containerWidth / singleCardWidth);
 
-  const handlePrev = () => {
-    setStartIndex((prev) => Math.max(prev - 0.2, 0));
-    setNextIndex((prev) => prev - 1);
-  };
+      setCardsToShow(Math.max(visibleCards, 1));
+      setCardWidth(singleCardWidth);
+      setMaxIndex(Math.max(0, cards.length - visibleCards));
+    };
 
-  const handleNext = () => {
-    setStartIndex((prev) => Math.min(prev + 0.2, maxIndex));
-    setNextIndex((prev) => prev + 1);
-  };
+    updateLayout();
+    window.addEventListener("resize", updateLayout);
+    return () => window.removeEventListener("resize", updateLayout);
+  }, [cards.length]);
+
+  const handlePrev = () => setStartIndex((prev) => Math.max(prev - 1, 0));
+  const handleNext = () =>
+    setStartIndex((prev) => Math.min(prev + 1, maxIndex));
 
   return (
     <AnimatedSquare
       initial={{ x: 200, opacity: 0 }}
       whileInView={{ x: 0, opacity: 1 }}
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={{ once: false, amount: 0.2 }}
       transition={{ duration: 0.5 }}
+      className="p-6"
     >
       <AnimatedSquareTitle
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        viewport={{ once: true, amount: 0.5 }}
-        transition={{ delay: 0.7, duration: 0.5 }}
+        viewport={{ once: false, amount: 0.5 }}
+        transition={{ delay: 1, duration: 0.5 }}
         title={session.title}
         color={session.cardColors}
       />
@@ -77,18 +85,18 @@ export default function SessionComponent({ session }: SessionComponentProps) {
       </div>
       <div className="flex w-full items-center justify-center gap-16 pb-9">
         <div className="w-16">
-          {cards.length > cardsToShow && nextIndex != 0 && (
-            <button onClick={handlePrev} disabled={startIndex === 0}>
-              <Image src={chevRonLeft} alt="icon" width={71} height={79} />
+          {startIndex > 0 && (
+            <button onClick={handlePrev}>
+              <ChevronLeft color={session.cardColors} />
             </button>
           )}
         </div>
-        <div className="overflow-hidden w-[80%]">
+        <div ref={containerRef} className="overflow-hidden w-[80%]">
           <div
             className="flex transition-transform duration-300 gap-14"
             style={{
-              transform: `translateX(-${startIndex * 100}%)`,
-              width: `${(cards.length * 100) / cardsToShow}%`,
+              transform: `translateX(-${startIndex * cardWidth}px)`,
+              width: `${cards.length * cardWidth}px`,
             }}
           >
             {cards.map((card, index) => (
@@ -104,9 +112,9 @@ export default function SessionComponent({ session }: SessionComponentProps) {
           </div>
         </div>
         <div className="w-16">
-          {cards.length > cardsToShow && nextIndex + 3 != cards.length && (
-            <button onClick={handleNext} disabled={startIndex === maxIndex}>
-              <Image src={chevRonRight} alt="icon" width={71} height={79} />
+          {startIndex + cardsToShow < cards.length && (
+            <button onClick={handleNext}>
+              <ChevronRight color={session.cardColors} />
             </button>
           )}
         </div>

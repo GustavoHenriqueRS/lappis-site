@@ -1,6 +1,11 @@
+"use client";
+
+import React, { useState, useEffect } from "react";
 import HorizontalCard from "./horizontalCard";
 import Square from "./square";
+import SquareTitle from "./squareTitle";
 import fototeste from "../app/public/foto-teste.png";
+import { createMotionComponent } from "@/utils/createMotionComponent";
 
 interface HorizontalCard {
   title: string;
@@ -15,11 +20,19 @@ interface ListSession {
   description: string;
   hoverColor: string;
   cardColors: string;
+  link: string;
 }
 
 interface ListSessionComponentProps {
   listSession: ListSession;
 }
+
+const AnimatedSquare = createMotionComponent(Square, "AnimatedSquare");
+
+const AnimatedSquareTitle = createMotionComponent(
+  SquareTitle,
+  "AnimatedSquareTitle"
+);
 
 export default function ListSessionComponent({
   listSession,
@@ -28,25 +41,62 @@ export default function ListSessionComponent({
     ? Object.values(listSession.cards)
     : [];
 
-  const horizontalCardsToShow = 3;
+  const [cardLimit, setCardLimit] = useState(3);
+  const gridLimit = 6;
+
+  useEffect(() => {
+    const updateCardLimit = () => {
+      const isGrid = window.innerWidth >= 1536;
+      setCardLimit(isGrid ? gridLimit : 3);
+    };
+
+    updateCardLimit();
+    window.addEventListener("resize", updateCardLimit);
+    return () => window.removeEventListener("resize", updateCardLimit);
+  }, [gridLimit]);
+
+  const visibleCards = horizontalCards.slice(0, cardLimit);
 
   return (
-    <Square className="py-8 flex flex-col gap-8">
-      {horizontalCards.map((horizontalCard, index) => {
-        if (index < horizontalCardsToShow) {
-          return (
-            <HorizontalCard
-              key={index}
-              color={listSession.cardColors}
-              hoverColor={listSession.hoverColor}
-              title={horizontalCard.title}
-              description={horizontalCard.description}
-              img={fototeste}
-              className="w-4/5"
-            />
-          );
-        }
-      })}
-    </Square>
+    <AnimatedSquare
+      initial={{ x: 200, opacity: 0 }}
+      whileInView={{ x: 0, opacity: 1 }}
+      viewport={{ once: false, amount: 0.2 }}
+      transition={{ duration: 0.5 }}
+      className="p-8"
+    >
+      <AnimatedSquareTitle
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: false, amount: 0.5 }}
+        transition={{ delay: 1, duration: 0.5 }}
+        title={listSession.title}
+        color={listSession.cardColors}
+      />
+      <div className="mt-32"></div>
+      <div className="mt-12 flex flex-col gap-8 items-center 2xl:grid 2xl:grid-cols-2 2xl:gap-12 2xl:w-4/5">
+        {visibleCards.map((horizontalCard, index) => (
+          <HorizontalCard
+            key={index}
+            color={listSession.cardColors}
+            hoverColor={listSession.hoverColor}
+            title={horizontalCard.title}
+            description={horizontalCard.description}
+            img={fototeste}
+            className="w-4/5 2xl:w-full"
+          />
+        ))}
+      </div>
+      {horizontalCards.length > cardLimit && (
+        <div className="mt-8 flex justify-center">
+          <a
+            href={listSession.link}
+            className={`px-24 py-3 bg-${listSession.cardColors} text-white rounded-lg text-center hover:bg-${listSession.hoverColor} transition`}
+          >
+            Veja Mais
+          </a>
+        </div>
+      )}
+    </AnimatedSquare>
   );
 }

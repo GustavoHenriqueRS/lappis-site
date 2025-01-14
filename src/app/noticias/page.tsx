@@ -31,7 +31,7 @@ export default function Noticias() {
     <div className="flex items-center justify-center flex-col mt-24 gap-16">
       <Square className="text-black px-28 gap-8 pb-8">
         <SquareTitle title={"Notícias"} color={"primaria01"} />
-        <div className="mt-36 flex flex-row gap-8 w-full flex-wrap justify-between">
+        <div className="mt-36 flex flex-col items-center gap-8 w-full flex-wrap justify-between">
           {currentNews.map((news: INew, index: number) => (
             <HorizontalCard
               key={index}
@@ -41,6 +41,7 @@ export default function Noticias() {
               description={news.description}
               img={galera}
               href={news.href}
+              className="w-full"
             />
           ))}
         </div>

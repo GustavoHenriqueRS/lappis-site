@@ -30,13 +30,13 @@ export default function HorizontalCard({
     <a
       href={href ? href : "#"}
       className={clsx(
-        `flex h-64 rounded-xl p-6 gap-6 text-white transition-colors duration-300`,
+        `flex h-40 md:h-64 rounded-lg p-4 md:p-6 gap-4 md:gap-6 text-white transition-colors duration-300`,
         cardColor,
         hoverClass,
         className
       )}
     >
-      <div className="relative w-[297px] h-[217px]">
+      <div className="relative w-1/2 sm:w-[184px] sm:h-[135px] md:w-[297px] md:h-[217px] flex-shrink-0">
         <Image
           src={img}
           alt="imagem do card"
@@ -44,9 +44,11 @@ export default function HorizontalCard({
           className="rounded-lg object-cover"
         />
       </div>
-      <div className="text-white font-orbitron flex flex-col gap-6">
-        <h2 className="text-xl md:text-3xl truncate">{title}</h2>
-        <p className="text-sm md:text-2xl font-light line-clamp-3">
+      <div className="text-white font-orbitron flex flex-col gap-6 overflow-hidden">
+        <h2 className="text-xl md:text-3xl line-clamp-2 break-words">
+          {title}
+        </h2>
+        <p className="text-sm md:text-2xl font-light line-clamp-3 break-words">
           {description}
         </p>
       </div>
