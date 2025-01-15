@@ -28,7 +28,7 @@ export default function Noticias() {
   const currentNews = newsData.slice(startIndex, startIndex + newsPerPage);
 
   return (
-    <div className="flex items-center justify-center flex-col mt-24 gap-16">
+    <div className="flex items-center justify-center flex-col gap-16">
       <Square className="text-black px-28 gap-8 pb-8">
         <SquareTitle title={"Notícias"} color={"primaria01"} />
         <div className="mt-36 flex flex-col items-center gap-8 w-full flex-wrap justify-between">

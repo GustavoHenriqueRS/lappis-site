@@ -41,7 +41,7 @@ export default async function Formacao({
   const formacao: IFormacao = sessionData.cards[title];
 
   return (
-    <div className="flex items-center justify-center flex-col mt-24 gap-16">
+    <div className="flex items-center justify-center flex-col gap-16">
       <Square className=" text-black px-28 gap-8">
         <SquareTitle title={"Formação"} color={"primaria03"} />
         <div className="mt-28 flex flex-row gap-6 w-full justify-between">

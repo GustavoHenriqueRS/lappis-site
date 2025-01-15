@@ -36,7 +36,7 @@ export default async function Page({
   );
 
   return (
-    <div className="flex items-center justify-center flex-col mt-24 gap-16">
+    <div className="flex items-center justify-center flex-col gap-16">
       <Square className=" text-black px-28 gap-12">
         <SquareTitle title={"Notícias"} color={"primaria04"} />
 

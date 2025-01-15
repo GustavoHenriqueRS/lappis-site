@@ -43,7 +43,7 @@ export default async function Parceria({
   const parceria: IParceria = sessionData.cards[title];
 
   return (
-    <div className="flex items-center justify-center flex-col mt-24 gap-16">
+    <div className="flex items-center justify-center flex-col gap-16">
       <Square className="bg-opacity-95 text-black px-28">
         <SquareTitle title={"Parceria"} color={"primaria03"} />
         <div className="flex flex-col mt-28 w-full gap-8 items-center">

@@ -11,7 +11,7 @@ export default function Pesquisa() {
   ];
 
   return (
-    <div className="flex items-center justify-center flex-col mt-24 gap-16">
+    <div className="flex items-center justify-center flex-col gap-16">
       <Square className="text-black px-28 gap-8 pb-8">
         <SquareTitle title={"Pesquisas"} color={"primaria05"} />
         <div className="flex flex-col gap-6 mt-32">

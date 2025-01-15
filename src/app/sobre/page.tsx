@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function Page() {
   return (
-    <div className="flex items-center justify-center flex-col mt-24 gap-16">
+    <div className="flex items-center justify-center flex-col gap-16">
       <Square className=" text-black px-28 gap-12">
         <SquareTitle title={"Sobre"} color={"primaria04"} />
         <div className="mt-32 flex flex-col gap-6">

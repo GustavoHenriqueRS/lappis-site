@@ -6,36 +6,56 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 export default function Contato() {
   return (
-    <div className="flex items-center justify-center flex-col mt-24 gap-16">
-      <Square className="text-black px-28 gap-12">
+    <div className="flex items-center justify-center flex-col gap-8 md:gap-16 px-4 sm:px-8">
+      <Square className="text-black px-6 sm:px-10 md:px-28 py-8 gap-8 md:gap-12">
         <SquareTitle title={"Contato"} color={"primaria02"} />
-        <div className="mt-32 flex flex-col lg:flex-row gap-12 lg:gap-48">
+        <div className="mt-8 md:mt-32 flex flex-col md:flex-row gap-8 md:gap-12 lg:gap-48">
           {/* Texto */}
-          <div className="flex flex-col gap-6 lg:w-1/2">
-            <h1 className="text-4xl md:text-4xl sm:text-2xl">Fale Conosco!</h1>
-            <p className="text-2xl md:text-2xl sm:text-base text-pretinho">
+          <div className="flex flex-col gap-4 md:gap-6 md:w-1/2">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl">
+              Fale Conosco!
+            </h1>
+            <p className="text-base sm:text-lg md:text-2xl text-pretinho leading-relaxed">
               Quer saber mais sobre o Lab Livre? Entre em contato com a gente!
               Estamos disponíveis para responder suas dúvidas, ouvir suas ideias
               ou simplesmente conversar sobre como podemos colaborar juntos.
             </p>
             {/* Ícones */}
-            <div className="flex gap-8 mt-6">
-              <FontAwesomeIcon
-                icon={faInstagram}
-                className="text-secundaria700Azul text-3xl hover:opacity-80 cursor-pointer"
-              />
-              <FontAwesomeIcon
-                icon={faLinkedin}
-                className="text-secundaria700Azul text-3xl hover:opacity-80 cursor-pointer"
-              />
-              <FontAwesomeIcon
-                icon={faEnvelope}
-                className="text-secundaria700Azul text-3xl hover:opacity-80 cursor-pointer"
-              />
+            <div className="flex flex-col gap-3 sm:gap-4 mt-4 sm:mt-6">
+              {/* Instagram */}
+              <div className="flex items-center gap-3 sm:gap-4">
+                <FontAwesomeIcon
+                  icon={faInstagram}
+                  className="text-secundaria700Azul text-2xl sm:text-3xl hover:opacity-80 cursor-pointer"
+                />
+                <span className="text-base sm:text-lg md:text-xl">
+                  @lab.livre
+                </span>
+              </div>
+              {/* LinkedIn */}
+              <div className="flex items-center gap-3 sm:gap-4">
+                <FontAwesomeIcon
+                  icon={faLinkedin}
+                  className="text-secundaria700Azul text-2xl sm:text-3xl hover:opacity-80 cursor-pointer"
+                />
+                <span className="text-base sm:text-lg md:text-xl">
+                  Lab Livre
+                </span>
+              </div>
+              {/* Email */}
+              <div className="flex items-center gap-3 sm:gap-4">
+                <FontAwesomeIcon
+                  icon={faEnvelope}
+                  className="text-secundaria700Azul text-2xl sm:text-3xl hover:opacity-80 cursor-pointer"
+                />
+                <span className="text-base sm:text-lg md:text-xl">
+                  contato@lablivre.com
+                </span>
+              </div>
             </div>
           </div>
           {/* Mapa */}
-          <div className="lg:w-1/2 mb-8">
+          <div className="md:w-1/2">
             <div
               style={{
                 position: "relative",
