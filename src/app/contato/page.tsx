@@ -7,9 +7,9 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 export default function Contato() {
   return (
     <div className="flex items-center justify-center flex-col gap-8 md:gap-16 px-4 sm:px-8">
-      <Square className="text-black px-6 sm:px-10 md:px-28 py-8 gap-8 md:gap-12">
+      <Square className="text-black px-6 sm:px-10 md:px-28 pb-8 gap-8 md:gap-12">
         <SquareTitle title={"Contato"} color={"primaria02"} />
-        <div className="mt-8 md:mt-32 flex flex-col md:flex-row gap-8 md:gap-12 lg:gap-48">
+        <div className="mt-24 md:mt-32 flex flex-col md:flex-row gap-8 md:gap-12 lg:gap-48">
           {/* Texto */}
           <div className="flex flex-col gap-4 md:gap-6 md:w-1/2">
             <h1 className="text-2xl sm:text-3xl md:text-4xl">

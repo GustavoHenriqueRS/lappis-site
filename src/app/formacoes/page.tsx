@@ -27,10 +27,10 @@ export default function Formacoes() {
   const currentNews = newsData.slice(startIndex, startIndex + newsPerPage);
 
   return (
-    <div className="flex items-center justify-center flex-col gap-16">
-      <Square className="text-black px-28 gap-8 pb-8">
+    <div className="flex items-center justify-center flex-col gap-16 px-4 sm:px-8">
+      <Square className="text-black gap-8 pb-8 px-6 sm:px-10 md:px-28">
         <SquareTitle title={"Formações"} color={"primaria05"} />
-        <div className="mt-36 flex flex-row gap-8 w-full flex-wrap justify-between">
+        <div className="mt-28 sm:mt-36 flex flex-row gap-8 w-full flex-wrap justify-between">
           {currentNews.map((news: INew, index: number) => (
             <HorizontalCard
               key={index}

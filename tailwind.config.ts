@@ -16,7 +16,7 @@ export default {
     "bg-secundaria700Azul", "bg-secundaria700Amarelo",
     "bg-secundaria900Laranja", "bg-secundaria900Lilas",
     "bg-secundaria900Magenta", "bg-secundaria900Roxo",
-    "bg-secundaria900Azul", "bg-secundaria900Amarelo",
+    "bg-secundaria900Azul", "bg-secundaria900Amarelo", "bg-lila",
     "hover:bg-secundaria500Laranja", "hover:bg-secundaria500Lilas",
     "hover:bg-secundaria500Magenta", "hover:bg-secundaria500Roxo",
     "hover:bg-primaria01", "hover:bg-primaria02", "hover:bg-primaria03", "hover:bg-primaria04",
@@ -28,7 +28,7 @@ export default {
     "hover:bg-secundaria700Azul", "hover:bg-secundaria700Amarelo",
     "hover:bg-secundaria900Laranja", "hover:bg-secundaria900Lilas",
     "hover:bg-secundaria900Magenta", "hover:bg-secundaria900Roxo",
-    "hover:bg-secundaria900Azul", "hover:bg-secundaria900Amarelo", "hover:text-black", "hover:text-white",
+    "hover:bg-secundaria900Azul", "hover:bg-secundaria900Amarelo", "hover:text-black", "hover:text-white", "hover:bg-lila"
   ],
   theme: {
     extend: {
