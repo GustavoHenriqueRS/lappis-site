@@ -18,7 +18,7 @@ export default function Card({
 }: CardProps) {
   return (
     <div
-      className={`p-6 bg-${color} hover:bg-${hoverColor} text-white rounded-xl  flex flex-col items-center  text-center mt-9 h-card shadow-xl w-[312px] `}
+      className={`p-6 bg-${color} hover:bg-${hoverColor} text-white rounded-xl  flex flex-col items-center  text-center mt-9 h-card shadow-xl w-[312px] mb-8`}
     >
       <Image
         src={img}

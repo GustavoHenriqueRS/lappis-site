@@ -67,7 +67,7 @@ export default function SessionComponent({ session }: SessionComponentProps) {
       whileInView={{ x: 0, opacity: 1 }}
       viewport={{ once: false, amount: 0.2 }}
       transition={{ duration: 0.5 }}
-      className="p-6"
+      // className="p-8"
     >
       <AnimatedSquareTitle
         initial={{ opacity: 0 }}
@@ -77,12 +77,12 @@ export default function SessionComponent({ session }: SessionComponentProps) {
         title={session.title}
         color={session.cardColors}
       />
-      <div className="mt-32">
+      <div className="mt-24 md:mt-32">
         <p className="text-2xl text-black font-notoSans">
           {session.description}
         </p>
       </div>
-      <div className="flex w-full items-center justify-center gap-16 pb-9">
+      <div className="flex w-full items-center justify-center gap-16">
         <div className="w-16">
           {startIndex > 0 && (
             <button onClick={handlePrev}>
