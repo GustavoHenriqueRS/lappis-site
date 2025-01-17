@@ -59,7 +59,7 @@ export default function ListSessionComponent({
 
   return (
     <AnimatedSquare
-      initial={{ x: 200, opacity: 0 }}
+      initial={{ x: 0, opacity: 0 }}
       whileInView={{ x: 0, opacity: 1 }}
       viewport={{ once: false, amount: 0.2 }}
       transition={{ duration: 0.5 }}
@@ -69,7 +69,7 @@ export default function ListSessionComponent({
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: false, amount: 0.5 }}
-        transition={{ delay: 1, duration: 0.5 }}
+        transition={{ duration: 0.5 }}
         title={listSession.title}
         color={listSession.cardColors}
       />

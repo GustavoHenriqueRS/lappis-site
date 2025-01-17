@@ -3,9 +3,8 @@ import { useState } from "react";
 import HorizontalCard from "@/components/horizontalCard";
 import Square from "@/components/square";
 import SquareTitle from "@/components/squareTitle";
-import newsData from "../public/data/noticias.json";
-import galera from "../public/galera.png";
 import Pagination from "@/components/pagination";
+import { useNotionData } from "../context/NotionDataContext";
 
 interface INew {
   title: string;
@@ -15,8 +14,10 @@ interface INew {
 }
 
 export default function Pesquisas() {
+  const { pesquisa, loading } = useNotionData();
+
   const newsPerPage = 5;
-  const totalPages = Math.ceil(newsData.length / newsPerPage);
+  const totalPages = Math.ceil(pesquisa.length / newsPerPage);
   const [currentPage, setCurrentPage] = useState(1);
 
   const onPageChange = (page: number) => {
@@ -24,7 +25,9 @@ export default function Pesquisas() {
   };
 
   const startIndex = (currentPage - 1) * newsPerPage;
-  const currentNews = newsData.slice(startIndex, startIndex + newsPerPage);
+  const currentNews = pesquisa.slice(startIndex, startIndex + newsPerPage);
+
+  if (loading) return <div>Loading...</div>;
 
   return (
     <div className="flex items-center justify-center flex-col gap-16 px-4 sm:px-8">
@@ -38,7 +41,7 @@ export default function Pesquisas() {
               hoverColor="primaria03"
               title={news.title}
               description={news.description}
-              img={galera}
+              img={news.img}
               href={news.href}
             />
           ))}

@@ -4,6 +4,7 @@ import "./globals.css";
 import BackgroundSquares from "@/components/backgroundSquares";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
+import { NotionDataProvider } from "./context/NotionDataContext";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -36,10 +37,12 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${orbitron.variable} antialiased bg-white `}
       >
-        <BackgroundSquares />
-        <Header />
-        <div className="mt-36 overflow-x-hidden">{children}</div>
-        <Footer />
+        <NotionDataProvider>
+          <BackgroundSquares />
+          <Header />
+          <div className="mt-36 overflow-x-hidden">{children}</div>
+          <Footer />
+        </NotionDataProvider>
       </body>
     </html>
   );
