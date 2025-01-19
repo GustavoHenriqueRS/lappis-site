@@ -35,6 +35,7 @@ const AnimatedSquareTitle = createMotionComponent(
 
 export default function SessionComponent({ session }: SessionComponentProps) {
   const cards: Card[] = Object.values(session.cards);
+
   const containerRef = useRef<HTMLDivElement>(null);
   const [cardsToShow, setCardsToShow] = useState(3);
   const [startIndex, setStartIndex] = useState(0);

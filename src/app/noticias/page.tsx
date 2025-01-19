@@ -2,10 +2,9 @@
 import HorizontalCard from "@/components/horizontalCard";
 import Square from "@/components/square";
 import SquareTitle from "@/components/squareTitle";
-import newsData from "../public/data/noticias.json";
-import galera from "../public/galera.png";
 import Pagination from "@/components/pagination";
 import { useState } from "react";
+import { useNotionData } from "../context/NotionDataContext";
 
 interface INew {
   title: string;
@@ -15,17 +14,27 @@ interface INew {
 }
 
 export default function Noticias() {
+  const { noticia, loading } = useNotionData();
+
   const newsPerPage = 5;
-  const totalPages = Math.ceil(newsData.length / newsPerPage);
+  const totalPages = Math.ceil(noticia.cards.length / newsPerPage);
   const [currentPage, setCurrentPage] = useState(1);
 
-  // Handler for page change
   const onPageChange = (page: number) => {
     setCurrentPage(page);
   };
 
   const startIndex = (currentPage - 1) * newsPerPage;
-  const currentNews = newsData.slice(startIndex, startIndex + newsPerPage);
+  const currentNews = noticia.cards
+    .slice(startIndex, startIndex + newsPerPage)
+    .map((card) => ({
+      title: card.title,
+      description: card.description,
+      img: card.url_image,
+      href: card.href,
+    }));
+
+  if (loading) return <div>Loading...</div>;
 
   return (
     <div className="flex items-center justify-center flex-col gap-16 px-4 sm:px-8">
@@ -39,7 +48,7 @@ export default function Noticias() {
               hoverColor="primaria01"
               title={news.title}
               description={news.description}
-              img={galera}
+              img={news.img} // Agora usa a propriedade img
               href={news.href}
               className="w-full"
             />

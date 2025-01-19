@@ -17,10 +17,10 @@ interface HorizontalCard {
 interface ListSession {
   cards: HorizontalCard[];
   title: string;
+  buttonLink?: string;
   description: string;
   hoverColor: string;
   cardColors: string;
-  link: string;
 }
 
 interface ListSessionComponentProps {
@@ -87,16 +87,14 @@ export default function ListSessionComponent({
           />
         ))}
       </div>
-      {horizontalCards.length > cardLimit && (
-        <div className="mt-8 flex justify-center">
-          <a
-            href={listSession.link}
-            className={`px-24 py-3 bg-${listSession.cardColors} text-white rounded-lg text-center hover:bg-${listSession.hoverColor} transition`}
-          >
-            Veja Mais
-          </a>
-        </div>
-      )}
+      <div className="mt-8 flex justify-center">
+        <a
+          href={listSession.buttonLink}
+          className={`px-24 py-3 bg-${listSession.cardColors} text-white rounded-lg text-center hover:bg-${listSession.hoverColor} transition`}
+        >
+          Veja Mais
+        </a>
+      </div>
     </AnimatedSquare>
   );
 }

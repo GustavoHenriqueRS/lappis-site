@@ -8,11 +8,7 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { useNotionData } from "@/app/context/NotionDataContext";
 
 export default function Header() {
-  const { header, loading } = useNotionData();
-
-  if (loading) {
-    return <div>Loading...</div>;
-  }
+  const { header } = useNotionData();
 
   if (!header || header.length === 0) {
     return <div>No data available for Header</div>;

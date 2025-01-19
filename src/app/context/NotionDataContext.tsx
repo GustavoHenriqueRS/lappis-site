@@ -3,11 +3,36 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { fetchAllNotionData } from "../lib/fetchAllNotionData";
 
+interface Contato {
+  title: string;
+  description: string;
+  instagram: string;
+  linkedin: string;
+  email: string;
+}
+
+interface Section {
+  title: string;
+  buttonLink?: string;
+  description: string;
+  hoverColor: string;
+  cardColors: string;
+  cards: {
+    title: string;
+    description: string;
+    url_image: string;
+    href: string;
+    competencias: string[];
+  }[];
+}
+
 interface NotionDataContextType {
   header: any[];
-  formacoes: any[];
-  parcerias: any[];
-  pesquisa: any[];
+  contato: Contato[];
+  formacoes: Section;
+  parcerias: Section;
+  pesquisa: Section;
+  noticia: Section;
   loading: boolean;
 }
 
@@ -22,9 +47,47 @@ export function NotionDataProvider({
 }) {
   const [data, setData] = useState<NotionDataContextType>({
     header: [],
-    formacoes: [],
-    parcerias: [],
-    pesquisa: [],
+    contato: [
+      {
+        title: "Contato",
+        description: "Fale Conosco!",
+        instagram: "/default-instagram.png",
+        linkedin: "/default-linkedin.png",
+        email: "Sem email",
+      },
+    ],
+    formacoes: {
+      title: "Formação",
+      buttonLink: "/formacao",
+      description: "Explore nossas formações disponíveis.",
+      hoverColor: "#FFC107",
+      cardColors: "#FFC107",
+      cards: [],
+    },
+    parcerias: {
+      title: "Parcerias",
+      buttonLink: "/parcerias",
+      description: "Conheça nossas parcerias estratégicas.",
+      hoverColor: "#FF5722",
+      cardColors: "#FF5722",
+      cards: [],
+    },
+    pesquisa: {
+      title: "Pesquisas",
+      buttonLink: "/pesquisas",
+      description: "Confira nossas pesquisas mais recentes.",
+      hoverColor: "#4CAF50",
+      cardColors: "#4CAF50",
+      cards: [],
+    },
+    noticia: {
+      title: "Notícias",
+      buttonLink: "/noticias",
+      description: "Acompanhe as últimas notícias.",
+      hoverColor: "#2196F3",
+      cardColors: "#2196F3",
+      cards: [],
+    },
     loading: true,
   });
 
@@ -32,38 +95,123 @@ export function NotionDataProvider({
     async function loadNotionData() {
       try {
         const notionData = await fetchAllNotionData();
+
+        console.log(notionData.contato[1]);
+
         setData({
           header: notionData.header.map((item: any) => ({
             title: item.properties?.Title?.title[0]?.plain_text || "Sem título",
             href:
               item.properties?.["Column 1"]?.rich_text[0]?.plain_text || "#",
           })),
-          formacoes: notionData.formacoes.map((item: any) => ({
-            title:
-              item.properties?.["Column 4"]?.rich_text[0]?.plain_text ||
-              "Sem título",
+          contato: notionData.contato.map((item: any) => ({
+            title: item.properties?.["Title"]?.rich_text?.[0]?.plain_text,
             description:
-              item.properties?.["Column 5"]?.rich_text[0]?.plain_text ||
+              item.properties?.["Description"]?.rich_text?.[0]?.plain_text ||
               "Sem descrição",
-            img:
-              item.properties?.["Column 6"]?.rich_text[0]?.plain_text ||
-              "/default-image.png",
-            href: item.url || "#",
-          })),
-          pesquisa: notionData.pesquisa.map((item: any) => ({
-            title:
-              item.properties?.["Column 4"]?.rich_text[0]?.plain_text ||
-              "Sem título",
-            description:
-              item.properties?.["Column 5"]?.rich_text[0]?.plain_text ||
-              "Sem descrição",
-            img:
-              item.properties?.["Column 6"]?.rich_text[0]?.plain_text ||
-              "/default-image.png",
-            href: item.url || "#",
+            instagram:
+              item.properties?.["Instagram"]?.rich_text?.[0]?.plain_text ||
+              "/default-instagram.png",
+            linkedin:
+              item.properties?.["Linkedin"]?.rich_text?.[0]?.plain_text ||
+              "/default-linkedin.png",
+            email:
+              item.properties?.["Email"]?.rich_text?.[0]?.plain_text ||
+              "Sem email",
           })),
 
-          parcerias: notionData.parcerias,
+          formacoes: {
+            title: "Formações",
+            buttonLink: "/formacao",
+            description: "Explore nossas formações disponíveis.",
+            hoverColor: "#FFC107",
+            cardColors: extractSectionColors(notionData.formacoes),
+            cards: notionData.formacoes.map((item: any) => ({
+              title:
+                item.properties?.["Column 4"]?.rich_text[0]?.plain_text ||
+                "Sem título",
+              description:
+                item.properties?.["Column 5"]?.rich_text[0]?.plain_text ||
+                "Sem descrição",
+              url_image:
+                item.properties?.["Column 6"]?.rich_text[0]?.plain_text ||
+                "/default-image.png",
+              href: item.url || "#",
+              competencias:
+                item.properties?.["Column 7"]?.rich_text[0]?.plain_text?.split(
+                  ", "
+                ) || [],
+            })),
+          },
+          pesquisa: {
+            title: "Pesquisas",
+            buttonLink: "/pesquisas",
+            description: "Confira nossas pesquisas mais recentes.",
+            hoverColor: "#4CAF50",
+            cardColors: extractSectionColors(notionData.pesquisa),
+            cards: notionData.pesquisa.map((item: any) => ({
+              title:
+                item.properties?.["Column 4"]?.rich_text[0]?.plain_text ||
+                "Sem título",
+              description:
+                item.properties?.["Column 5"]?.rich_text[0]?.plain_text ||
+                "Sem descrição",
+              url_image:
+                item.properties?.["Column 6"]?.rich_text[0]?.plain_text ||
+                "/default-image.png",
+              href: item.url || "#",
+              competencias:
+                item.properties?.["Column 7"]?.rich_text[0]?.plain_text?.split(
+                  ", "
+                ) || [],
+            })),
+          },
+          parcerias: {
+            title: "Parcerias",
+            buttonLink: "/parcerias",
+            description: "Conheça nossas parcerias estratégicas.",
+            hoverColor: "#FF5722",
+            cardColors: extractSectionColors(notionData.parcerias),
+            cards: notionData.parcerias.map((item: any) => ({
+              title:
+                item.properties?.["Column 4"]?.rich_text[0]?.plain_text ||
+                "Sem título",
+              description:
+                item.properties?.["Column 5"]?.rich_text[0]?.plain_text ||
+                "Sem descrição",
+              url_image:
+                item.properties?.["Column 6"]?.rich_text[0]?.plain_text ||
+                "/default-image.png",
+              href: item.url || "#",
+              competencias:
+                item.properties?.["Column 7"]?.rich_text[0]?.plain_text?.split(
+                  ", "
+                ) || [],
+            })),
+          },
+          noticia: {
+            title: "Notícias",
+            buttonLink: "/noticias",
+            description: "Acompanhe as últimas notícias.",
+            hoverColor: "#2196F3",
+            cardColors: extractSectionColors(notionData.noticia),
+            cards: notionData.noticia.map((item: any) => ({
+              title:
+                item.properties?.["Column 4"]?.rich_text[0]?.plain_text ||
+                "Sem título",
+              description:
+                item.properties?.["Column 5"]?.rich_text[0]?.plain_text ||
+                "Sem descrição",
+              url_image:
+                item.properties?.["Column 6"]?.rich_text[0]?.plain_text ||
+                "/default-image.png",
+              href: item.url || "#",
+              competencias:
+                item.properties?.["Column 7"]?.rich_text[0]?.plain_text?.split(
+                  ", "
+                ) || [],
+            })),
+          },
           loading: false,
         });
       } catch (error) {
@@ -80,6 +228,17 @@ export function NotionDataProvider({
       {children}
     </NotionDataContext.Provider>
   );
+}
+
+export function extractSectionColors(sectionItems: any[]) {
+  for (let i = 0; i < sectionItems.length; i++) {
+    if (
+      sectionItems[i].properties?.["Column 3"]?.rich_text[0]?.plain_text !=
+      undefined
+    ) {
+      return sectionItems[i].properties?.["Column 3"]?.rich_text[0]?.plain_text;
+    }
+  }
 }
 
 export function useNotionData() {

@@ -10,7 +10,7 @@ export default function Formacoes() {
   const { formacoes, loading } = useNotionData();
   const newsPerPage = 5;
 
-  const totalPages = Math.ceil(formacoes.length / newsPerPage);
+  const totalPages = Math.ceil(formacoes.cards.length / newsPerPage);
   const [currentPage, setCurrentPage] = useState(1);
 
   const onPageChange = (page: number) => {
@@ -18,8 +18,14 @@ export default function Formacoes() {
   };
 
   const startIndex = (currentPage - 1) * newsPerPage;
-  const currentNews = formacoes.slice(startIndex, startIndex + newsPerPage);
-
+  const currentNews = formacoes.cards
+    .slice(startIndex, startIndex + newsPerPage)
+    .map((card) => ({
+      title: card.title,
+      description: card.description,
+      img: card.url_image,
+      href: card.href,
+    }));
   if (loading) return <div>Loading...</div>;
 
   return (

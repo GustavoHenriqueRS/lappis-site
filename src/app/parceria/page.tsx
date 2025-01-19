@@ -14,10 +14,10 @@ interface INew {
 }
 
 export default function Pesquisas() {
-  const { pesquisa, loading } = useNotionData();
+  const { parcerias, loading } = useNotionData();
 
   const newsPerPage = 5;
-  const totalPages = Math.ceil(pesquisa.cards.length / newsPerPage);
+  const totalPages = Math.ceil(parcerias.cards.length / newsPerPage);
   const [currentPage, setCurrentPage] = useState(1);
 
   const onPageChange = (page: number) => {
@@ -25,7 +25,7 @@ export default function Pesquisas() {
   };
 
   const startIndex = (currentPage - 1) * newsPerPage;
-  const currentNews = pesquisa.cards
+  const currentNews = parcerias.cards
     .slice(startIndex, startIndex + newsPerPage)
     .map((card) => ({
       title: card.title,

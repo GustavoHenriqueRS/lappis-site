@@ -1,66 +1,77 @@
+"use client";
+
 import Square from "@/components/square";
 import SquareTitle from "@/components/squareTitle";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { useNotionData } from "../context/NotionDataContext";
+
+interface INew {
+  title: string;
+  description: string;
+  instagram: string;
+  linkedin: string;
+  email: string;
+}
 
 export default function Contato() {
+  const { contato, loading } = useNotionData();
+
+  const news: INew[] = contato;
+
+  console.log(news[1]);
+
+  if (loading) return <div>Loading...</div>;
+
   return (
     <div className="flex items-center justify-center flex-col gap-8 md:gap-16 px-4 sm:px-8">
       <Square className="text-black px-6 sm:px-10 md:px-28 pb-8 gap-8 md:gap-12">
         <SquareTitle title={"Contato"} color={"primaria02"} />
         <div className="mt-24 md:mt-32 flex flex-col md:flex-row gap-8 md:gap-12 lg:gap-48">
-          {/* Texto */}
           <div className="flex flex-col gap-4 md:gap-6 md:w-1/2">
             <h1 className="text-2xl sm:text-3xl md:text-4xl">
-              Fale Conosco!
+              {news[1].title}
             </h1>
             <p className="text-base sm:text-lg md:text-2xl text-pretinho leading-relaxed">
-              Quer saber mais sobre o Lab Livre? Entre em contato com a gente!
-              Estamos disponíveis para responder suas dúvidas, ouvir suas ideias
-              ou simplesmente conversar sobre como podemos colaborar juntos.
+              {news[1].description}
             </p>
-            {/* Ícones */}
             <div className="flex flex-col gap-3 sm:gap-4 mt-4 sm:mt-6">
-              {/* Instagram */}
               <div className="flex items-center gap-3 sm:gap-4">
                 <FontAwesomeIcon
                   icon={faInstagram}
                   className="text-secundaria700Azul text-2xl sm:text-3xl hover:opacity-80 cursor-pointer"
                 />
                 <span className="text-base sm:text-lg md:text-xl">
-                  @lab.livre
+                  {news[1].instagram}
                 </span>
               </div>
-              {/* LinkedIn */}
               <div className="flex items-center gap-3 sm:gap-4">
                 <FontAwesomeIcon
                   icon={faLinkedin}
                   className="text-secundaria700Azul text-2xl sm:text-3xl hover:opacity-80 cursor-pointer"
                 />
                 <span className="text-base sm:text-lg md:text-xl">
-                  Lab Livre
+                  {news[1].linkedin}
                 </span>
               </div>
-              {/* Email */}
               <div className="flex items-center gap-3 sm:gap-4">
                 <FontAwesomeIcon
                   icon={faEnvelope}
                   className="text-secundaria700Azul text-2xl sm:text-3xl hover:opacity-80 cursor-pointer"
                 />
                 <span className="text-base sm:text-lg md:text-xl">
-                  contato@lablivre.com
+                  {news[1].email}
                 </span>
               </div>
             </div>
           </div>
-          {/* Mapa */}
           <div className="md:w-1/2">
             <div
               style={{
                 position: "relative",
                 width: "100%",
-                paddingTop: "56.25%", // Aspect ratio
+                paddingTop: "56.25%",
                 overflow: "hidden",
                 borderRadius: "12px",
               }}

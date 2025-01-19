@@ -26,8 +26,6 @@ export default function HorizontalCard({
     ? `hover:bg-${hoverColor}`
     : "hover:bg-primaria01";
 
-  console.log(img);
-
   return (
     <a
       href={href ? href : "#"}
