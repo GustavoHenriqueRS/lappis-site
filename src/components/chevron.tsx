@@ -15,13 +15,18 @@ const colorClassMap: Record<string, string> = {
 
 export const ChevronLeft = ({ color }: { color: string }) => {
   const colorClass = colorClassMap[color] || "fill-primaria05";
+
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="71"
-      height="79"
+      width="100%" // Ajusta automaticamente ao contêiner
+      height="auto" // Mantém a proporção
       viewBox="0 0 71 79"
       className={`${colorClass}`}
+      style={{
+        maxWidth: "50px", // Tamanho máximo (ajuste conforme necessário)
+        minWidth: "20px", // Tamanho mínimo (ajuste conforme necessário)
+      }}
     >
       <path d="M6.50002 49.8923C-1.49998 45.2735 -1.5 33.7265 6.5 29.1077L53 2.26092C61 -2.35788 71 3.41561 71 12.6532V66.3468C71 75.5844 61 81.3579 53 76.7391L6.50002 49.8923Z" />
     </svg>
@@ -34,12 +39,17 @@ export const ChevronRight = ({ color }: { color: string }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="71"
-      height="79"
+      width="100%" // Ajusta automaticamente ao contêiner
+      height="auto" // Mantém a proporção
       viewBox="0 0 71 79"
       className={`${colorClass}`}
+      style={{
+        maxWidth: "50px", // Tamanho máximo (ajuste conforme necessário)
+        minWidth: "20px", // Tamanho mínimo (ajuste conforme necessário)
+      }}
     >
       <path d="M64.5 49.8923C72.5 45.2735 72.5 33.7265 64.5 29.1077L18 2.26092C10 -2.35788 0 3.41561 0 12.6532V66.3468C0 75.5844 10 81.3579 18 76.7391L64.5 49.8923Z" />
     </svg>
   );
 };
+

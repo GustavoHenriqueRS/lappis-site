@@ -9,10 +9,10 @@ export default function Page() {
       <Square className="text-black px-6 sm:px-10 md:px-28 gap-8 md:gap-12">
         <SquareTitle title={"Sobre"} color={"primaria04"} />
         <div className="mt-24 md:mt-32 flex flex-col gap-6">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-notoSans">
             Sobre nós
           </h1>
-          <p className="text-base sm:text-lg md:text-2xl text-pretinho leading-relaxed">
+          <p className="text-base sm:text-lg md:text-2xl text-pretinho leading-relaxed font-notoSans">
             O Lab Livre é um laboratório multidisciplinar da Universidade de
             Brasília (FCTE) focado em inovação tecnológica, pesquisa científica
             e desenvolvimento de software livre com impacto social. Criamos
@@ -32,10 +32,10 @@ export default function Page() {
           </p>
         </div>
         <div className="flex flex-col gap-6">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-notoSans">
             Metodologia
           </h1>
-          <p className="text-base sm:text-lg md:text-2xl text-pretinho leading-relaxed">
+          <p className="text-base sm:text-lg md:text-2xl text-pretinho leading-relaxed font-notoSans">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
             dapibus est ultrices ante vestibulum, a facilisis tortor aliquet.
             Cras bibendum turpis lorem, vel aliquet magna aliquam vel. Nam
@@ -46,16 +46,16 @@ export default function Page() {
           </p>
         </div>
         <div className="flex flex-col gap-6">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl sm:text-left">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl sm:text-left font-notoSans">
             Missão, Visão e Valores
           </h1>
           <div className="flex flex-col sm:flex-row justify-between gap-6">
             {/* Card Missão */}
             <div className="flex flex-col flex-1 gap-3 sm:pr-6 sm:border-none border-b-2 border-secundaria700Magenta">
-              <div className="px-6 py-20 bg-secundaria700Magenta rounded-xl text-white font-orbitron text-lg sm:text-2xl md:text-3xl text-center mb-8">
+              <div className="px-6 py-20 bg-secundaria700Magenta rounded-xl text-white font-orbitron text-lg sm:text-2xl md:text-3xl text-center mb-8 font-notoSans">
                 MISSÃO
               </div>
-              <p className="text-sm sm:text-base md:text-lg text-secundaria900Magenta text-center sm:text-left mb-2 w-full">
+              <p className="text-sm sm:text-base md:text-lg text-secundaria900Magenta text-center sm:text-left mb-2 w-full font-notoSans">
                 Promover a cultura do software livre e a inclusão digital por
                 meio de inovação e pesquisa, capacitando jovens, mulheres e
                 grupos sub-representados, para liderar mudanças sociais e
@@ -65,10 +65,10 @@ export default function Page() {
             </div>
             {/* Card Visão */}
             <div className="flex flex-col flex-1 gap-3 sm:px-6 sm:border-x-2 border-secundaria700Magenta border-b-2 sm:border-b-0">
-              <div className="px-6 py-20 bg-secundaria700Magenta rounded-xl text-white font-orbitron text-lg sm:text-2xl md:text-3xl text-center mb-8">
+              <div className="px-6 py-20 bg-secundaria700Magenta rounded-xl text-white font-orbitron text-lg sm:text-2xl md:text-3xl text-center mb-8 font-notoSans">
                 VISÃO
               </div>
-              <p className="text-sm sm:text-base md:text-lg text-secundaria900Magenta text-center sm:text-left mb-2 w-full">
+              <p className="text-sm sm:text-base md:text-lg text-secundaria900Magenta text-center sm:text-left mb-2 w-full font-notoSans">
                 Ser referência em software livre na América Latina, liderando em
                 pesquisa, inovação e capacitação de profissionais colaborativos
                 e éticos, alinhados aos princípios de liberdade, inclusão e
@@ -77,10 +77,10 @@ export default function Page() {
             </div>
             {/* Card Valores */}
             <div className="flex flex-col flex-1 gap-3 sm:pl-6 sm:border-none">
-              <div className="px-6 py-20 bg-secundaria700Magenta rounded-xl text-white font-orbitron text-lg sm:text-2xl md:text-3xl text-center mb-8">
+              <div className="px-6 py-20 bg-secundaria700Magenta rounded-xl text-white font-orbitron text-lg sm:text-2xl md:text-3xl text-center mb-8 font-notoSans">
                 VALORES
               </div>
-              <p className="text-sm sm:text-base md:text-lg text-secundaria900Magenta text-center sm:text-left mb-2 w-full">
+              <p className="text-sm sm:text-base md:text-lg text-secundaria900Magenta text-center sm:text-left mb-2 w-full font-notoSans">
                 Liberdade, inclusão, colaboração, inovação, aprendizado e
                 diversidade.
               </p>
@@ -88,10 +88,10 @@ export default function Page() {
           </div>
         </div>
         <div>
-          <h1 className="text-2xl sm:text-3xl md:text-4xl mb-6">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl mb-6 font-notoSans">
             História
           </h1>
-          <p className="text-base sm:text-lg md:text-2xl text-pretinho leading-relaxed">
+          <p className="text-base sm:text-lg md:text-2xl text-pretinho leading-relaxed font-notoSans">
             O Lab Livre nasceu em 2012 como parte de um projeto acadêmico e de
             pesquisa da Universidade de Brasília (UnB), vinculado à Faculdade
             UnB Gama (FCTE). Desde o início, nossa essência sempre foi sobre
