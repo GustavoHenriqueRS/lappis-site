@@ -96,8 +96,6 @@ export function NotionDataProvider({
       try {
         const notionData = await fetchAllNotionData();
 
-        console.log(notionData.contato[1]);
-
         setData({
           header: notionData.header.map((item: any) => ({
             title: item.properties?.Title?.title[0]?.plain_text || "Sem título",
@@ -123,7 +121,9 @@ export function NotionDataProvider({
           formacoes: {
             title: "Formações",
             buttonLink: "/formacao",
-            description: "Explore nossas formações disponíveis.",
+            description:
+              notionData.formacoes[0].properties?.["Column 1"]?.rich_text[0]
+                ?.plain_text || "",
             hoverColor: "#FFC107",
             cardColors: extractSectionColors(notionData.formacoes),
             cards: notionData.formacoes.map((item: any) => ({
@@ -146,7 +146,9 @@ export function NotionDataProvider({
           pesquisa: {
             title: "Pesquisas",
             buttonLink: "/pesquisas",
-            description: "Confira nossas pesquisas mais recentes.",
+            description:
+              notionData.pesquisa[1].properties?.["Column 1"]?.rich_text[0]
+                ?.plain_text || "",
             hoverColor: "#4CAF50",
             cardColors: extractSectionColors(notionData.pesquisa),
             cards: notionData.pesquisa.map((item: any) => ({

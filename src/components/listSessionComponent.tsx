@@ -4,7 +4,6 @@ import React, { useState, useEffect } from "react";
 import HorizontalCard from "./horizontalCard";
 import Square from "./square";
 import SquareTitle from "./squareTitle";
-import fototeste from "../app/public/foto-teste.png";
 import { createMotionComponent } from "@/utils/createMotionComponent";
 
 interface HorizontalCard {
@@ -82,7 +81,7 @@ export default function ListSessionComponent({
             hoverColor={listSession.hoverColor}
             title={horizontalCard.title}
             description={horizontalCard.description}
-            img={fototeste}
+            img={horizontalCard.url_image}
             className="w-4/5 2xl:w-full"
           />
         ))}

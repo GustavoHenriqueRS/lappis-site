@@ -1,8 +1,8 @@
 "use client";
+
 import React, { useState, useEffect, useRef } from "react";
 import Square from "./square";
 import SquareTitle from "./squareTitle";
-import fototeste from "../app/public/foto-teste.png";
 import { ChevronLeft, ChevronRight } from "./chevron";
 import Card from "./card";
 import { createMotionComponent } from "@/utils/createMotionComponent";
@@ -105,7 +105,7 @@ export default function SessionComponent({ session }: SessionComponentProps) {
                 description={card.description}
                 color={session.cardColors}
                 hoverColor={session.hoverColor}
-                img={fototeste}
+                img={card.url_image}
                 key={index}
               />
             ))}
