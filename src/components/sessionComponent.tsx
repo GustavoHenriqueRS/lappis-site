@@ -111,7 +111,7 @@ export default function SessionComponent({ session }: SessionComponentProps) {
             ))}
           </div>
         </div>
-        <div className="w-16">
+        <div className="w-16 ">
           {startIndex + cardsToShow < cards.length && (
             <button onClick={handleNext}>
               <ChevronRight color={session.cardColors} />

@@ -29,7 +29,7 @@ export default function Contato() {
       <Square className="text-black px-6 sm:px-10 md:px-28 pb-8 gap-8 md:gap-12">
         <SquareTitle title={"Contato"} color={"primaria02"} />
         <div className="mt-24 md:mt-32 flex flex-col md:flex-row gap-8 md:gap-12 lg:gap-48">
-          <div className="flex flex-col gap-4 md:gap-6 md:w-1/2">
+          <div className="flex flex-col gap-4 md:gap-6 md:w-1/2 font-notoSans">
             <h1 className="text-2xl sm:text-3xl md:text-4xl">
               {news[1].title}
             </h1>
