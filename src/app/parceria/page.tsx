@@ -13,7 +13,7 @@ interface INew {
   href: string;
 }
 
-export default function Pesquisas() {
+export default function Parceirias() {
   const { parcerias, loading } = useNotionData();
 
   const newsPerPage = 5;
@@ -39,13 +39,13 @@ export default function Pesquisas() {
   return (
     <div className="flex items-center justify-center flex-col gap-16 px-4 sm:px-8">
       <Square className="text-black gap-8 pb-8 px-6 sm:px-10 md:px-28">
-        <SquareTitle title={"Pesquisas"} color={"primaria03"} />
+        <SquareTitle title={"Parceirias"} color={"primaria06"} />
         <div className="mt-28 sm:mt-36 flex flex-row gap-8 w-full flex-wrap justify-between">
           {currentNews.map((news: INew, index: number) => (
             <HorizontalCard
               key={index}
-              color="secundaria700Roxo"
-              hoverColor="primaria03"
+              color="secundaria700Laranja"
+              hoverColor="primaria06"
               title={news.title}
               description={news.description}
               img={news.img}
@@ -57,8 +57,8 @@ export default function Pesquisas() {
           currentPage={currentPage}
           totalPages={totalPages}
           onPageChange={onPageChange}
-          primaryColor="primaria03"
-          secondaryColor="secundaria700Roxo"
+          primaryColor="primaria06"
+          secondaryColor="secundaria700Laranja"
           textColor="white"
         />
       </Square>

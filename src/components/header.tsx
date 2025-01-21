@@ -16,7 +16,11 @@ export default function Header() {
 
   return (
     <div className="flex w-full h-24 px-16 py-12 border-b-1 bg-[#F6F6F6] items-center fixed z-20 justify-between top-0 gap-10">
-      <Image src={Logo} alt="logo" width={150} height={150} />
+      <Image
+        src={Logo}
+        alt="Logo"
+        className="w-[100px] h-[100px] sm:w-[150px] sm:h-[150px]"
+      />
       <div className="items-center gap-4 md:gap-6 xl:gap-8 text-black hidden md:flex">
         {header.map((menuButton: any, index: number) => (
           <Link
