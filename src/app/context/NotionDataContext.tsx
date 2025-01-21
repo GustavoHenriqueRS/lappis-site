@@ -22,7 +22,7 @@ interface Section {
     description: string;
     url_image: string;
     href: string;
-    competencias: string[];
+    competencias?: string[];
   }[];
 }
 
@@ -208,10 +208,6 @@ export function NotionDataProvider({
                 item.properties?.["Column 6"]?.rich_text[0]?.plain_text ||
                 "/default-image.png",
               href: item.url || "#",
-              competencias:
-                item.properties?.["Column 7"]?.rich_text[0]?.plain_text?.split(
-                  ", "
-                ) || [],
             })),
           },
           loading: false,

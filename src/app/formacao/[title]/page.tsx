@@ -1,16 +1,18 @@
+"use client";
+
 import Square from "@/components/square";
-import path from "path";
-import fs from "fs/promises";
 import SquareTitle from "@/components/squareTitle";
 import Image from "next/image";
-import galera from "../../public/meninaIPEA.jpg";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
+import { useNotionData } from "@/app/context/NotionDataContext";
 
 interface IFormacao {
   title: string;
   description: string;
   url_image: string;
   publicacoes?: Publicacao[];
-  competencias: string[];
+  competencias?: string[];
 }
 
 interface Publicacao {
@@ -19,26 +21,28 @@ interface Publicacao {
   url: string;
 }
 
-async function getSessionData() {
-  const filePath = path.join(
-    process.cwd(),
-    "src/app/public/data",
-    "formacao.json"
-  );
-  const fileContent = await fs.readFile(filePath, "utf8");
-  return JSON.parse(fileContent);
-}
+export default function Formacao() {
+  const pathname = usePathname();
+  const { formacoes, loading } = useNotionData();
+  const [name, setName] = useState<string>("");
+  const [formacao, setFormacao] = useState<IFormacao | null>(null);
 
-export default async function Formacao({
-  params,
-}: {
-  params: Promise<{ title: string }>;
-}) {
-  const title = (await params).title;
+  useEffect(() => {
+    const formacaoName = decodeURIComponent(pathname.split("/").pop() || "");
+    setName(formacaoName);
+  }, [pathname]);
 
-  const sessionData = await getSessionData();
+  useEffect(() => {
+    if (formacoes && formacoes.cards) {
+      const foundFormacao = formacoes.cards.find(
+        (card: IFormacao) => card.title === name
+      );
+      setFormacao(foundFormacao || null);
+    }
+  }, [formacoes, name]);
 
-  const formacao: IFormacao = sessionData.cards[title];
+  if (loading) return <div>Loading...</div>;
+  if (!formacao) return <div>Formação não encontrada</div>;
 
   return (
     <div className="flex items-center justify-center flex-col gap-16">
@@ -51,7 +55,7 @@ export default async function Formacao({
           </div>
 
           <div className="flex w-[499px] h-[398px] rounded-xl overflow-hidden relative">
-            <Image src={galera} alt="Imagem da formação" fill />
+            <Image src={formacao.url_image} alt="Imagem da formação" fill />
           </div>
         </div>
         <div className="flex flex-col w-full gap-6">
@@ -59,14 +63,15 @@ export default async function Formacao({
             Competências desenvolvidas no Projeto
           </h1>
           <div className="flex flex-row gap-6">
-            {formacao.competencias.map((competencia: string) => (
-              <div
-                className="py-2 px-4 bg-primaria04 text-white font-orbitron text-xl rounded-xl"
-                key={competencia}
-              >
-                {competencia}
-              </div>
-            ))}
+            {formacao.competencias &&
+              formacao.competencias.map((competencia: string) => (
+                <div
+                  className="py-2 px-4 bg-primaria04 text-white font-orbitron text-xl rounded-xl"
+                  key={competencia}
+                >
+                  {competencia}
+                </div>
+              ))}
           </div>
         </div>
 

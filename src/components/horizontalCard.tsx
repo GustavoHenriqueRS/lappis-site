@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { ImageProps } from "next/image";
 import clsx from "clsx";
+import Link from "next/link";
 
 interface HorizontalCardProps {
   color: string | undefined;
@@ -8,7 +9,7 @@ interface HorizontalCardProps {
   title: string;
   description: string;
   img: ImageProps["src"];
-  href?: string;
+  href: string;
   className?: string;
 }
 
@@ -27,8 +28,8 @@ export default function HorizontalCard({
     : "hover:bg-primaria01";
 
   return (
-    <a
-      href={href ? href : "#"}
+    <Link
+      href={href}
       className={clsx(
         `flex h-40 md:h-64 rounded-lg p-4 md:p-6 gap-4 md:gap-6 text-white transition-colors duration-300 w-full`,
         cardColor,
@@ -52,6 +53,6 @@ export default function HorizontalCard({
           {description}
         </p>
       </div>
-    </a>
+    </Link>
   );
 }

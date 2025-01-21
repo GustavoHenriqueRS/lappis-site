@@ -49,7 +49,7 @@ export default function Parceirias() {
               title={news.title}
               description={news.description}
               img={news.img}
-              href={news.href}
+              href={`/parceria/${news.title}`}
             />
           ))}
         </div>

@@ -19,6 +19,7 @@ interface Session {
   description: string;
   hoverColor: string;
   cardColors: string;
+  buttonLink: string;
   cards: Card[];
 }
 
@@ -104,6 +105,7 @@ export default function SessionComponent({ session }: SessionComponentProps) {
                 title={card.title}
                 description={card.description}
                 color={session.cardColors}
+                href={`${session.buttonLink}/${card.title}`}
                 hoverColor={session.hoverColor}
                 img={card.url_image}
                 key={index}

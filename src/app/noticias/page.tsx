@@ -48,8 +48,8 @@ export default function Noticias() {
               hoverColor="primaria01"
               title={news.title}
               description={news.description}
-              img={news.img} // Agora usa a propriedade img
-              href={news.href}
+              img={news.img}
+              href={`/noticias/${news.title}`}
               className="w-full"
             />
           ))}

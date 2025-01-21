@@ -79,6 +79,7 @@ export default function ListSessionComponent({
             key={index}
             color={listSession.cardColors}
             hoverColor={listSession.hoverColor}
+            href={`${listSession.buttonLink}/${horizontalCard.title}`}
             title={horizontalCard.title}
             description={horizontalCard.description}
             img={horizontalCard.url_image}

@@ -41,7 +41,7 @@ export default function Formacoes() {
               title={news.title}
               description={news.description}
               img={news.img}
-              href={news.href}
+              href={`/formacao/${news.title}`}
             />
           ))}
         </div>
