@@ -5,9 +5,12 @@ import ListSessionComponent from "@/components/listSessionComponent";
 import OurTeam from "@/components/OurTeam";
 import Support from "@/components/Support";
 import { useNotionData } from "./context/NotionDataContext";
+import Confetti from "react-confetti-boom";
+import { useState } from "react";
 
 export default function Home() {
   const { formacoes, pesquisa, parcerias, noticia, loading } = useNotionData();
+  const [showConfetti, setShowConfetti] = useState(false);
 
   if (loading)
     return (
@@ -18,10 +21,24 @@ export default function Home() {
 
   return (
     <div className="flex items-center justify-center flex-col gap-16 px-4 sm:px-8">
-      <Square className="p-3 sm:p-4 flex flex-col items-center gap-8">
-        <div className="flex justify-center w-full h-[400px] sm:h-[500px] md:h-[700px] relative">
+      <button
+        className="absolute top-0 left-0 z-50 p-4"
+        onClick={() => setShowConfetti(true)}
+      />
+      {showConfetti && (
+        <Confetti
+          mode="fall"
+          particleCount={200}
+          colors={["#ff577f", "#ff884b"]}
+          shapeSize={20}
+          fadeOutHeight={10000}
+        />
+      )}
+
+      <Square className="p-3 sm:p-4 flex flex-col items-center gap-8 -z-30">
+        <div className="flex justify-center w-full h-[400px] sm:h-[500px] md:h-[700px] relative -z-20">
           <video
-            className="rounded-[12px] w-full h-full object-cover"
+            className="rounded-[12px] w-full h-full object-cover -z-10"
             autoPlay
             loop
             playsInline
