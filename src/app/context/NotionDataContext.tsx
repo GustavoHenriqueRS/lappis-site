@@ -29,7 +29,7 @@ interface IPesquisa {
   description: string;
   hoverColor: string;
   cardColors: string;
-  button_link?: string;
+  buttonLink?: string;
   cards: IPesquisaCard[];
 }
 
@@ -121,7 +121,7 @@ export function NotionDataProvider({
     },
     pesquisa: {
       title: "Pesquisas",
-      button_link: "/pesquisas",
+      buttonLink: "/pesquisas",
       description: "Confira nossas pesquisas mais recentes.",
       hoverColor: "#4CAF50",
       cardColors: "#4CAF50",
@@ -192,7 +192,7 @@ export function NotionDataProvider({
           },
           pesquisa: {
             title: "Pesquisas",
-            button_link: "/pesquisas",
+            buttonLink: "/pesquisas",
             description:
               notionData.pesquisa[1].properties?.["Column 1"]?.rich_text[0]
                 ?.plain_text || "",
