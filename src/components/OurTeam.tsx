@@ -6,6 +6,8 @@ import SquareTitle from "./squareTitle";
 import { createMotionComponent } from "@/utils/createMotionComponent";
 import Image, { StaticImageData } from "next/image";
 import galera from "../app/public/galera.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
 const AnimatedSquare = createMotionComponent(Square, "AnimatedSquare");
 
@@ -109,22 +111,25 @@ export default function OurTeam() {
           onClick={closeModal}
         >
           <div
-            className="relative w-full max-w-5xl max-h-[90vh] flex flex-col items-center"
+            className="relative w-full max-w-7xl max-h-[90vh] flex flex-col items-center px-6 sm:px-24"
             onClick={(e) => e.stopPropagation()} // Impedir fechamento ao clicar no conteúdo
           >
             <Image
               src={images[modalImageIndex]}
               alt={`Imagem ampliada ${modalImageIndex + 1}`}
-              className="w-full h-auto max-h-[80vh] rounded-lg"
+              className="w-full h-auto max-h-[85vh] rounded-lg"
             />
+            {/* Botão de fechar acima da imagem */}
+
             <button
-              className="absolute top-4 right-4 text-white bg-red-600 rounded-full px-2 py-1 text-sm sm:text-base"
-              onClick={closeModal}
-            >
-              ✕
-            </button>
+  className="absolute -top-10 right-4 sm:-top-14 sm:right-6 bg-red-600 text-white rounded-full w-10 h-10 sm:w-12 sm:h-12 shadow-md flex items-center justify-center"
+  onClick={closeModal}
+>
+  <FontAwesomeIcon icon={faTimes} className="text-sm sm:text-lg" />
+</button>
+
             {/* Botões de navegação */}
-            <div className="absolute inset-y-0 left-4 flex items-center">
+            <div className="absolute inset-y-0 left-6 flex items-center">
               <button
                 className="text-white bg-gray-700 rounded-full px-3 py-2 sm:px-5 sm:py-3 text-sm sm:text-base"
                 onClick={prevImage}
@@ -132,7 +137,7 @@ export default function OurTeam() {
                 ‹
               </button>
             </div>
-            <div className="absolute inset-y-0 right-4 flex items-center">
+            <div className="absolute inset-y-0 right-6 flex items-center">
               <button
                 className="text-white bg-gray-700 rounded-full px-3 py-2 sm:px-5 sm:py-3 text-sm sm:text-base"
                 onClick={nextImage}
