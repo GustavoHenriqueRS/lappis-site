@@ -3,6 +3,7 @@ import SessionComponent from "@/components/sessionComponent";
 import Square from "@/components/square";
 import ListSessionComponent from "@/components/listSessionComponent";
 import OurTeam from "@/components/OurTeam";
+import Support from "@/components/Support";
 import { useNotionData } from "./context/NotionDataContext";
 
 export default function Home() {
@@ -48,6 +49,7 @@ export default function Home() {
       <ListSessionComponent listSession={noticia} />
 
       <OurTeam />
+      <Support />
     </div>
   );
 }

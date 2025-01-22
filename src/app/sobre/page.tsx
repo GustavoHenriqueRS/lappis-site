@@ -52,7 +52,7 @@ export default function Page() {
           <div className="flex flex-col sm:flex-row justify-between gap-6">
             {/* Card Missão */}
             <div className="flex flex-col flex-1 gap-3 sm:pr-6 sm:border-none border-b-2 border-secundaria700Magenta">
-              <div className="px-6 py-20 bg-secundaria700Magenta rounded-xl text-white font-orbitron text-lg sm:text-2xl md:text-3xl text-center mb-8 font-notoSans">
+              <div className="px-6 py-20 bg-secundaria700Magenta rounded-xl text-white font-orbitron text-lg sm:text-2xl md:text-3xl text-center mb-8">
                 MISSÃO
               </div>
               <p className="text-sm sm:text-base md:text-lg text-secundaria900Magenta text-center sm:text-left mb-2 w-full font-notoSans">
@@ -65,7 +65,7 @@ export default function Page() {
             </div>
             {/* Card Visão */}
             <div className="flex flex-col flex-1 gap-3 sm:px-6 sm:border-x-2 border-secundaria700Magenta border-b-2 sm:border-b-0">
-              <div className="px-6 py-20 bg-secundaria700Magenta rounded-xl text-white font-orbitron text-lg sm:text-2xl md:text-3xl text-center mb-8 font-notoSans">
+              <div className="px-6 py-20 bg-secundaria700Magenta rounded-xl text-white font-orbitron text-lg sm:text-2xl md:text-3xl text-center mb-8 ">
                 VISÃO
               </div>
               <p className="text-sm sm:text-base md:text-lg text-secundaria900Magenta text-center sm:text-left mb-2 w-full font-notoSans">
@@ -77,7 +77,7 @@ export default function Page() {
             </div>
             {/* Card Valores */}
             <div className="flex flex-col flex-1 gap-3 sm:pl-6 sm:border-none">
-              <div className="px-6 py-20 bg-secundaria700Magenta rounded-xl text-white font-orbitron text-lg sm:text-2xl md:text-3xl text-center mb-8 font-notoSans">
+              <div className="px-6 py-20 bg-secundaria700Magenta rounded-xl text-white font-orbitron text-lg sm:text-2xl md:text-3xl text-center mb-8">
                 VALORES
               </div>
               <p className="text-sm sm:text-base md:text-lg text-secundaria900Magenta text-center sm:text-left mb-2 w-full font-notoSans">
