@@ -12,7 +12,7 @@ export default function Square({
   return (
     <div
       ref={ref}
-      className={`bg-lightgrey flex z-10 rounded-xl w-95 items-center flex-col ${className}`}
+      className={`bg-lightgrey flex rounded-xl w-95 items-center flex-col ${className}`}
     >
       {children}
     </div>
