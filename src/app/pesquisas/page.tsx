@@ -6,18 +6,19 @@ import SquareTitle from "@/components/squareTitle";
 import Pagination from "@/components/pagination";
 import { useNotionData } from "../context/NotionDataContext";
 
-interface INew {
-  title: string;
-  description: string;
-  img: string;
-  href: string;
-}
+// interface INoticia {
+//   title: string;
+//   description: string;
+//   url_image: string;
+// }
 
 export default function Pesquisas() {
   const { pesquisa, loading } = useNotionData();
 
+  console.log(pesquisa.pesquisaCard);
+
   const newsPerPage = 5;
-  const totalPages = Math.ceil(pesquisa.cards.length / newsPerPage);
+  const totalPages = Math.ceil(pesquisa.pesquisaCard.length / newsPerPage);
   const [currentPage, setCurrentPage] = useState(1);
 
   const onPageChange = (page: number) => {
@@ -25,14 +26,15 @@ export default function Pesquisas() {
   };
 
   const startIndex = (currentPage - 1) * newsPerPage;
-  const currentNews = pesquisa.cards
+  const currentNews = pesquisa.pesquisaCard
     .slice(startIndex, startIndex + newsPerPage)
     .map((card) => ({
       title: card.title,
       description: card.description,
-      img: card.url_image,
-      href: card.href,
+      url_image: card.url_image,
     }));
+
+  console.log(currentNews);
 
   if (loading) return <div>Loading...</div>;
 
@@ -41,15 +43,15 @@ export default function Pesquisas() {
       <Square className="text-black gap-8 pb-8 px-6 sm:px-10 md:px-28">
         <SquareTitle title={"Pesquisas"} color={"primaria03"} />
         <div className="mt-28 sm:mt-36 flex flex-row gap-8 w-full flex-wrap justify-between">
-          {currentNews.map((news: INew, index: number) => (
+          {currentNews.map((news: any, index: number) => (
             <HorizontalCard
               key={index}
               color="secundaria700Roxo"
               hoverColor="primaria03"
               title={news.title}
               description={news.description}
-              img={news.img}
-              href={news.href}
+              img={news.url_image}
+              href={`/pesquisas/${news.title}`}
             />
           ))}
         </div>

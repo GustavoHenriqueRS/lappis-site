@@ -31,7 +31,7 @@ export default function HorizontalCard({
     <Link
       href={href}
       className={clsx(
-        `flex h-40 md:h-64 rounded-lg p-4 md:p-6 gap-4 md:gap-6 text-white transition-colors duration-300 w-full`,
+        `flex h-40 md:h-64 rounded-lg p-4 md:p-6 gap-4 md:gap-6 text-white w-full hover:scale-110 transition-transform duration-150 ease-in-out`,
         cardColor,
         hoverClass,
         className

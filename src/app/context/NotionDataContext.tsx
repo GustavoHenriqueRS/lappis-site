@@ -11,6 +11,28 @@ interface Contato {
   email: string;
 }
 
+interface IPessoas {
+  title: string[];
+  description: string[];
+  pessoas: string[];
+}
+
+interface IPesquisaCard {
+  title: string;
+  description: string;
+  url_image: string;
+  pessoas: IPessoas;
+}
+
+interface IPesquisa {
+  title: string;
+  description: string;
+  card_colors: string;
+  hover_color: string;
+  button_link?: string;
+  pesquisaCard: IPesquisaCard[];
+}
+
 interface Publicacao {
   title: string;
   description: string;
@@ -56,7 +78,7 @@ interface NotionDataContextType {
   contato: Contato[];
   formacoes: Section;
   parcerias: IParceria;
-  pesquisa: Section;
+  pesquisa: IPesquisa;
   noticia: Section;
   loading: boolean;
 }
@@ -99,11 +121,11 @@ export function NotionDataProvider({
     },
     pesquisa: {
       title: "Pesquisas",
-      buttonLink: "/pesquisas",
+      button_link: "/pesquisas",
       description: "Confira nossas pesquisas mais recentes.",
-      hoverColor: "#4CAF50",
-      cardColors: "#4CAF50",
-      cards: [],
+      hover_color: "#4CAF50",
+      card_colors: "#4CAF50",
+      pesquisaCard: [],
     },
     noticia: {
       title: "Notícias",
@@ -170,27 +192,39 @@ export function NotionDataProvider({
           },
           pesquisa: {
             title: "Pesquisas",
-            buttonLink: "/pesquisas",
+            button_link: "/pesquisas",
             description:
               notionData.pesquisa[1].properties?.["Column 1"]?.rich_text[0]
                 ?.plain_text || "",
-            hoverColor: "#4CAF50",
-            cardColors: extractSectionColors(notionData.pesquisa),
-            cards: notionData.pesquisa.map((item: any) => ({
-              title:
-                item.properties?.["Column 4"]?.rich_text[0]?.plain_text ||
-                "Sem título",
-              description:
-                item.properties?.["Column 5"]?.rich_text[0]?.plain_text ||
-                "Sem descrição",
+            hover_color: "#4CAF50",
+            card_colors: extractSectionColors(notionData.pesquisa),
+            pesquisaCard: notionData.pesquisa.map((item: any) => ({
+              title: item.properties?.Pesquisa?.rich_text[0]?.plain_text,
+              description: item.properties?.Descricao?.rich_text[0]?.plain_text,
               url_image:
-                item.properties?.["Column 6"]?.rich_text[0]?.plain_text ||
-                "/default-image.png",
-              href: item.url || "#",
-              competencias:
-                item.properties?.["Column 7"]?.rich_text[0]?.plain_text?.split(
-                  ", "
-                ) || [],
+                item.properties?.ImagemPesquisa?.rich_text[0]?.plain_text,
+              pessoas: {
+                title:
+                  item.properties?.Pessoas?.rich_text
+                    .map((t: any) => t.plain_text.trim())
+                    .join("")
+                    .split(",") || [],
+                description:
+                  item.properties?.Cargo?.rich_text
+                    .map((d: any) => d.plain_text.trim())
+                    .join("")
+                    .split(",") || [],
+                link_imagem:
+                  item.properties?.Link_Imagem?.rich_text
+                    .map((l: any) => l.plain_text.trim())
+                    .join("")
+                    .split(",") || [],
+                link_pessoa:
+                  item.properties?.Link_Pessoa?.rich_text
+                    .map((p: any) => p.plain_text.trim())
+                    .join("")
+                    .split(",") || [],
+              },
             })),
           },
           parcerias: {
