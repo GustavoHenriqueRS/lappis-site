@@ -33,8 +33,8 @@ export default function OurTeam() {
         color={"primaria02"}
       />
       <div className="flex flex-col px-6 sm:px-52 items-center w-full">
-        <div className=" text-black font-notoSans text-xl sm:text-2xl mt-28 md:mt-32">
-          Somos estudantes, pesquisadores e professores da UnB, comprometidos
+        <div className=" text-pretinho font-notoSans mt-28 sm:mt-32 text-center text-base sm:text-lg md:text-2xl">
+          Somos estudantes, pesquisadores e professores da Universidade de Brasília (UnB), comprometidos
           com o avanço do software livre, a inovação colaborativa e a promoção
           da diversidade e inclusão.
         </div>
