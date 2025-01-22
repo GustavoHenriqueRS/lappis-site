@@ -113,7 +113,7 @@ export function NotionDataProvider({
     },
     parcerias: {
       title: "Parcerias",
-      buttonLink: "/parcerias",
+      buttonLink: "/parceria",
       description: "Conheça nossas parcerias estratégicas.",
       hoverColor: "#FF5722",
       cardColors: "#FF5722",
@@ -229,7 +229,7 @@ export function NotionDataProvider({
           },
           parcerias: {
             title: "Parcerias",
-            buttonLink: "/parcerias",
+            buttonLink: "/parceria",
             description: "Conheça nossas parcerias estratégicas.",
             hoverColor: "#FF5722",
             cardColors: extractSectionColors(notionData.parcerias),
