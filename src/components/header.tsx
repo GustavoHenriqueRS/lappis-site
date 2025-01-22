@@ -25,7 +25,11 @@ export default function Header() {
         {header.map((menuButton: any, index: number) => (
           <Link
             key={index}
-            href={menuButton.href}
+            href={
+              menuButton.href.startsWith("/")
+                ? menuButton.href
+                : `/${menuButton.href}`
+            }
             className="text-md md:text-xl xl:text-2xl font-bold hover:text-primaria04"
           >
             {menuButton.title}

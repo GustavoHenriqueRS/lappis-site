@@ -19,8 +19,13 @@ interface Session {
   description: string;
   hoverColor: string;
   cardColors: string;
-  buttonLink: string;
-  cards: Card[];
+  buttonLink?: string;
+  cards: {
+    title: string;
+    description: string;
+    url_image: string;
+    competencias?: string[];
+  }[];
 }
 
 interface SessionComponentProps {

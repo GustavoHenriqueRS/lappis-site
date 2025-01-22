@@ -10,7 +10,7 @@ interface HorizontalCard {
   title: string;
   description: string;
   url_image: string;
-  competencias: string[];
+  competencias?: string[];
 }
 
 interface ListSession {
