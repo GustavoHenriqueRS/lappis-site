@@ -88,12 +88,14 @@ export default function ListSessionComponent({
         ))}
       </div>
       <div className="mt-8 flex justify-center">
-        <a
-          href={listSession.buttonLink}
-          className={`px-24 py-3 bg-${listSession.cardColors} text-white rounded-lg text-center hover:bg-${listSession.hoverColor} transition`}
-        >
-          Veja Mais
-        </a>
+        {listSession.buttonLink !== "/pesquisas" && (
+          <a
+            href={listSession.buttonLink}
+            className={`px-24 py-3 bg-${listSession.cardColors} text-white rounded-lg text-center hover:bg-${listSession.hoverColor} transition`}
+          >
+            Veja Mais
+          </a>
+        )}
       </div>
     </AnimatedSquare>
   );
