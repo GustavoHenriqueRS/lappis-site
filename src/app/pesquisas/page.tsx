@@ -6,19 +6,19 @@ import SquareTitle from "@/components/squareTitle";
 import Pagination from "@/components/pagination";
 import { useNotionData } from "../context/NotionDataContext";
 
-// interface INoticia {
-//   title: string;
-//   description: string;
-//   url_image: string;
-// }
+interface IPesquisa {
+  title: string;
+  description: string;
+  url_image: string;
+}
 
 export default function Pesquisas() {
   const { pesquisa, loading } = useNotionData();
 
-  console.log(pesquisa.pesquisaCard);
+  console.log(pesquisa.cards);
 
   const newsPerPage = 5;
-  const totalPages = Math.ceil(pesquisa.pesquisaCard.length / newsPerPage);
+  const totalPages = Math.ceil(pesquisa.cards.length / newsPerPage);
   const [currentPage, setCurrentPage] = useState(1);
 
   const onPageChange = (page: number) => {
@@ -26,7 +26,7 @@ export default function Pesquisas() {
   };
 
   const startIndex = (currentPage - 1) * newsPerPage;
-  const currentNews = pesquisa.pesquisaCard
+  const currentNews = pesquisa.cards
     .slice(startIndex, startIndex + newsPerPage)
     .map((card) => ({
       title: card.title,
@@ -43,7 +43,7 @@ export default function Pesquisas() {
       <Square className="text-black gap-8 pb-8 px-6 sm:px-10 md:px-28">
         <SquareTitle title={"Pesquisas"} color={"primaria03"} />
         <div className="mt-28 sm:mt-36 flex flex-row gap-8 w-full flex-wrap justify-between">
-          {currentNews.map((news: any, index: number) => (
+          {currentNews.map((news: IPesquisa, index: number) => (
             <HorizontalCard
               key={index}
               color="secundaria700Roxo"

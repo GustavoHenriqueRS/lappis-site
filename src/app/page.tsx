@@ -39,12 +39,12 @@ export default function Home() {
       </Square>
 
       <SessionComponent session={formacoes} />
-      {/* <SessionComponent session={pesquisa} /> */}
+      <SessionComponent session={pesquisa} />
       <SessionComponent session={parcerias} />
       <SessionComponent session={noticia} />
 
       <ListSessionComponent listSession={formacoes} />
-      {/* <ListSessionComponent listSession={pesquisa} /> */}
+      <ListSessionComponent listSession={pesquisa} />
       <ListSessionComponent listSession={parcerias} />
       <ListSessionComponent listSession={noticia} />
 

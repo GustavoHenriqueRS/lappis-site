@@ -32,8 +32,8 @@ export default function Pesquisa() {
   }, [pathname]);
 
   useEffect(() => {
-    if (pesquisa && pesquisa.pesquisaCard) {
-      const foundPesquisa = pesquisa.pesquisaCard.find(
+    if (pesquisa && pesquisa.cards) {
+      const foundPesquisa = pesquisa.cards.find(
         (card) => card.title === name
       ) as IPesquisaCard | undefined;
       setPesquisaCard(foundPesquisa || null);

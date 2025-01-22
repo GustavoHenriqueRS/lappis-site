@@ -11,7 +11,7 @@ interface Card {
   title: string;
   description: string;
   url_image: string;
-  competencias: string[];
+  competencias?: string[];
 }
 
 interface Session {

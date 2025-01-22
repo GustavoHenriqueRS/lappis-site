@@ -27,10 +27,10 @@ interface IPesquisaCard {
 interface IPesquisa {
   title: string;
   description: string;
-  card_colors: string;
-  hover_color: string;
+  hoverColor: string;
+  cardColors: string;
   button_link?: string;
-  pesquisaCard: IPesquisaCard[];
+  cards: IPesquisaCard[];
 }
 
 interface Publicacao {
@@ -123,9 +123,9 @@ export function NotionDataProvider({
       title: "Pesquisas",
       button_link: "/pesquisas",
       description: "Confira nossas pesquisas mais recentes.",
-      hover_color: "#4CAF50",
-      card_colors: "#4CAF50",
-      pesquisaCard: [],
+      hoverColor: "#4CAF50",
+      cardColors: "#4CAF50",
+      cards: [],
     },
     noticia: {
       title: "Notícias",
@@ -196,9 +196,9 @@ export function NotionDataProvider({
             description:
               notionData.pesquisa[1].properties?.["Column 1"]?.rich_text[0]
                 ?.plain_text || "",
-            hover_color: "#4CAF50",
-            card_colors: extractSectionColors(notionData.pesquisa),
-            pesquisaCard: notionData.pesquisa.map((item: any) => ({
+            hoverColor: "#4CAF50",
+            cardColors: extractSectionColors(notionData.pesquisa),
+            cards: notionData.pesquisa.map((item: any) => ({
               title: item.properties?.Pesquisa?.rich_text[0]?.plain_text,
               description: item.properties?.Descricao?.rich_text[0]?.plain_text,
               url_image:
