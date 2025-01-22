@@ -3,25 +3,24 @@
 import Square from "@/components/square";
 import SquareTitle from "@/components/squareTitle";
 import Image from "next/image";
-import galera from "../../public/foto-teste.png";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { useNotionData } from "@/app/context/NotionDataContext";
-
-interface IParceria {
-  title: string;
-  description: string;
-  url_image: string;
-  // external_link: string;
-  publicacoes?: Publicacao[];
-  competencias: string[];
-  // status?: "ativo" | "finalizado";
-}
 
 interface Publicacao {
   title: string;
   description: string;
   url: string;
+}
+
+interface IParceria {
+  title: string;
+  description: string;
+  url_image: string;
+  buttonLink?: string;
+  competencias: string[];
+  status: string;
+  cards: Publicacao[];
 }
 
 export default function Parceria() {
@@ -52,19 +51,19 @@ export default function Parceria() {
       <Square className="bg-opacity-95 text-black px-28">
         <SquareTitle title={"Parceria"} color={"primaria03"} />
         <div className="flex flex-col mt-28 w-full gap-8 items-center">
-          {/* {parceria.status && (
+          {parceria.status && (
             <p className="font-orbitron text-2xl text-white py-2 px-4 rounded-xl bg-secundaria700Azul self-end font-bold">
               {parceria.status}
             </p>
-          )} */}
+          )}
           <div className="flex flex-row gap-6 w-full justify-between">
             <div className="flex flex-col gap-6">
               <h2 className="text-3xl">{parceria.title}</h2>
-              <p className="max-w-[499px]">{parceria.description}</p>
+              <p className="text-2xl">{parceria.description}</p>
             </div>
 
             <div className="flex w-[499px] h-[398px] rounded-xl overflow-hidden relative">
-              <Image src={galera} alt="Imagem da parceria" fill />
+              <Image src={parceria.url_image} alt="Imagem da parceria" fill />
             </div>
           </div>
           <a
@@ -93,9 +92,9 @@ export default function Parceria() {
             <h1 className="text-3xl self-start">
               Publicações relacionadas ao Projeto
             </h1>
-            {/* <div> */}
-            {/* {parceria.publicacoes &&
-                parceria.publicacoes.map((publicacao: Publicacao) => {
+            <div>
+              {parceria.cards &&
+                parceria.cards.map((publicacao: Publicacao) => {
                   if (!publicacao) {
                     return null;
                   }
@@ -109,12 +108,12 @@ export default function Parceria() {
                   );
                 })}
 
-              {!parceria.publicacoes && (
+              {!parceria.cards && (
                 <p>
                   Ainda não existem publicações relacionadas a este projeto.
                 </p>
               )}
-            </div> */}
+            </div>
           </div>
         </div>
       </Square>

@@ -10,7 +10,6 @@ interface INew {
   title: string;
   description: string;
   img: string;
-  href: string;
 }
 
 export default function Parceirias() {
@@ -31,7 +30,6 @@ export default function Parceirias() {
       title: card.title,
       description: card.description,
       img: card.url_image,
-      href: card.href,
     }));
 
   if (loading) return <div>Loading...</div>;

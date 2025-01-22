@@ -11,6 +11,31 @@ interface Contato {
   email: string;
 }
 
+interface Publicacao {
+  title: string;
+  description: string;
+  url: string;
+}
+
+interface IParceriaCard {
+  title: string;
+  description: string;
+  url_image: string;
+  buttonLink?: string;
+  competencias: string[];
+  status: string;
+  cards: Publicacao[];
+}
+
+interface IParceria {
+  title: string;
+  buttonLink?: string;
+  description: string;
+  hoverColor: string;
+  cardColors: string;
+  cards: IParceriaCard[];
+}
+
 interface Section {
   title: string;
   buttonLink?: string;
@@ -30,7 +55,7 @@ interface NotionDataContextType {
   header: any[];
   contato: Contato[];
   formacoes: Section;
-  parcerias: Section;
+  parcerias: IParceria;
   pesquisa: Section;
   noticia: Section;
   loading: boolean;
@@ -184,11 +209,13 @@ export function NotionDataProvider({
               url_image:
                 item.properties?.["Column 6"]?.rich_text[0]?.plain_text ||
                 "/default-image.png",
-              href: item.url || "#",
               competencias:
                 item.properties?.["Column 7"]?.rich_text[0]?.plain_text?.split(
                   ", "
                 ) || [],
+              status: item.properties?.Status?.rich_text[0]?.plain_text,
+              buttonLink:
+                item.properties?.LinkProjeto?.rich_text[0]?.plain_text,
             })),
           },
           noticia: {

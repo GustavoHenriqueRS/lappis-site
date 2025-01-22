@@ -24,7 +24,6 @@ export default function Formacoes() {
       title: card.title,
       description: card.description,
       img: card.url_image,
-      href: card.href,
     }));
   if (loading) return <div>Loading...</div>;
 
