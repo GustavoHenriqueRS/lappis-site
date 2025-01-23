@@ -32,7 +32,7 @@ export default function Card({
           className="rounded-xl"
         />
         <h1 className="text-2xl font-orbitron mt-6">{title}</h1>
-        <p className="font-notoSans mt-6 ">{description}</p>
+        <p className="font-notoSans mt-6 line-clamp-3">{description}</p>
       </div>
     </Link>
   );
