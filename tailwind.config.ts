@@ -82,6 +82,9 @@ export default {
       opacity: {
         "95": "0.95",
       },
+      boxShadow: {
+        custom: "20px 30px 30px #00000019",
+      }
     },
   },
   plugins: [],

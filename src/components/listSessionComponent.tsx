@@ -91,7 +91,7 @@ export default function ListSessionComponent({
         {listSession.buttonLink !== "/pesquisas" && (
           <a
             href={listSession.buttonLink}
-            className={`px-24 py-3 bg-${listSession.cardColors} text-white rounded-lg text-center hover:bg-${listSession.hoverColor} transition`}
+            className={`px-24 py-3 bg-${listSession.cardColors} text-white rounded-lg text-center hover:bg-${listSession.hoverColor} transition hover:scale-105 ease-out `}
           >
             Veja Mais
           </a>

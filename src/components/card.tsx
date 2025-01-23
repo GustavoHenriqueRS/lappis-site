@@ -22,7 +22,7 @@ export default function Card({
   return (
     <Link href={href ? href : "#"}>
       <div
-        className={`p-6 bg-${color} hover:bg-${hoverColor} text-white rounded-xl  flex flex-col items-center  text-center mt-9 h-card shadow-xl w-[312px] mb-8 hover:scale-110 transition-transform duration-300 ease-in-out `}
+        className={`p-6 bg-${color} hover:bg-${hoverColor} text-white rounded-xl  flex flex-col items-center  text-center mt-9 h-card shadow-xl w-[312px] mb-8 hover:scale-110 duration-300 ease-in-out hover:shadow-custom transition-all `}
       >
         <Image
           src={img}
