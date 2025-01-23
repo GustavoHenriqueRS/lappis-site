@@ -7,11 +7,43 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { useNotionData } from "@/app/context/NotionDataContext";
 import Confetti from "react-confetti-boom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
+
+interface MenuButtonProps {
+  title: string;
+  href: string;
+}
 
 export default function Header() {
   const { header } = useNotionData();
   const [showConfetti, setShowConfetti] = useState(false);
+  const pathname = usePathname();
+  const [headerName, setHeaderName] = useState("");
+
+  useEffect(() => {
+    const path = pathname === "/" ? "início" : pathname.split("/").pop();
+    if (path) {
+      setHeaderName(decodeURIComponent(path));
+    }
+  }, [pathname]);
+
+  const compareHeaderName = (name: string, target: string) => {
+    if (headerName === "" && target.toLowerCase() === "início") return true;
+
+    return (
+      name
+        .trim()
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "") ===
+      target
+        .trim()
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+    );
+  };
 
   if (!header || header.length === 0) {
     return <div>No data available for Header</div>;
@@ -39,7 +71,7 @@ export default function Header() {
         className="w-[100px] h-[100px] sm:w-[150px] sm:h-[150px]"
       />
       <div className="items-center gap-4 md:gap-6 xl:gap-8 text-black hidden md:flex">
-        {header.map((menuButton: any, index: number) => (
+        {header.map((menuButton: MenuButtonProps, index: number) => (
           <Link
             key={index}
             href={
@@ -47,12 +79,17 @@ export default function Header() {
                 ? menuButton.href
                 : `/${menuButton.href}`
             }
-            className="text-md md:text-xl xl:text-2xl font-bold hover:text-primaria04"
+            className={`text-md md:text-xl xl:text-2xl font-bold ${
+              compareHeaderName(headerName, menuButton.title)
+                ? "text-primaria04"
+                : "hover:text-primaria04"
+            }`}
           >
             {menuButton.title}
           </Link>
         ))}
       </div>
+
       <div className="flex flex-col md:hidden items-center gap-4 text-black absolute top-0 right-0 p-4">
         <button className="text-2xl h-10 w-10 text-primaria04">
           <FontAwesomeIcon icon={faBars} className="text-2xl" size="2x" />

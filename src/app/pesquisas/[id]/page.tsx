@@ -43,8 +43,6 @@ export default function Pesquisa() {
   if (!pesquisaCard) return <div>Pesquisa não encontrada</div>;
   if (loading) return <div>Loading...</div>;
 
-  console.log(pesquisaCard.pessoas);
-
   return (
     <div className="flex items-center justify-center flex-col gap-16">
       <Square className="text-black px-28 gap-8 pb-8">
@@ -54,7 +52,7 @@ export default function Pesquisa() {
           <p className="text-2xl">{pesquisaCard.description}</p>
 
           <h1 className="text-3xl">Pessoas</h1>
-          <div className="flex justify-between">
+          <div className="flex justify-between gap-12">
             {pesquisaCard.pessoas.title.map((title, index) => (
               <PersonCard
                 key={index}

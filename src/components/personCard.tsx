@@ -15,8 +15,14 @@ export default function PersonCard({
   link_pessoa,
 }: PersonCardProps) {
   return (
-    <div className="flex rounded-xl p-6 gap-6 text-white bg-primaria05 flex-col">
-      <Image src={link_imagem} alt="imagem do card" width={400} height={217} />
+    <div className="flex rounded-xl p-6 gap-6 text-white bg-primaria05 flex-col hover:scale-110 transition-transform duration-300 ease-in-out ">
+      <Image
+        src={link_imagem}
+        alt="imagem do card"
+        width={400}
+        height={400}
+        className="rounded-full"
+      />
       <Link
         href={link_pessoa}
         className="text-white font-orbitron flex flex-col gap-6 text-center"

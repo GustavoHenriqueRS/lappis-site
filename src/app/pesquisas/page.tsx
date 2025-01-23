@@ -15,8 +15,6 @@ interface IPesquisa {
 export default function Pesquisas() {
   const { pesquisa, loading } = useNotionData();
 
-  console.log(pesquisa.cards);
-
   const newsPerPage = 5;
   const totalPages = Math.ceil(pesquisa.cards.length / newsPerPage);
   const [currentPage, setCurrentPage] = useState(1);
@@ -33,8 +31,6 @@ export default function Pesquisas() {
       description: card.description,
       url_image: card.url_image,
     }));
-
-  console.log(currentNews);
 
   if (loading) return <div>Loading...</div>;
 

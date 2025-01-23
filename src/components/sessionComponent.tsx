@@ -97,7 +97,7 @@ export default function SessionComponent({ session }: SessionComponentProps) {
             </button>
           )}
         </div>
-        <div ref={containerRef} className="overflow-hidden w-[80%]">
+        <div ref={containerRef} className="overflow-hidden w-[80%] px-4">
           <div
             className="flex transition-transform duration-300 gap-14"
             style={{

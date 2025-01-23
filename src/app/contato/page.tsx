@@ -20,8 +20,6 @@ export default function Contato() {
 
   const news: INew[] = contato;
 
-  console.log(news[1]);
-
   if (loading) return <div>Loading...</div>;
 
   return (
