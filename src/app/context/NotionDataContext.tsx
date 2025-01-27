@@ -181,8 +181,7 @@ export function NotionDataProvider({
                 item.properties?.["Column 5"]?.rich_text[0]?.plain_text ||
                 "Sem descrição",
               url_image:
-                item.properties?.["Column 6"]?.rich_text[0]?.plain_text ||
-                "/default-image.png",
+                item.properties?.["Column 6"]?.rich_text[0]?.plain_text || "/",
               href: item.url || "#",
               competencias:
                 item.properties?.["Column 7"]?.rich_text[0]?.plain_text?.split(
@@ -241,8 +240,7 @@ export function NotionDataProvider({
                 item.properties?.["Column 5"]?.rich_text[0]?.plain_text ||
                 "Sem descrição",
               url_image:
-                item.properties?.["Column 6"]?.rich_text[0]?.plain_text ||
-                "/default-image.png",
+                item.properties?.["Column 6"]?.rich_text[0]?.plain_text || "/",
               competencias:
                 item.properties?.["Column 7"]?.rich_text[0]?.plain_text?.split(
                   ", "
@@ -266,8 +264,7 @@ export function NotionDataProvider({
                 item.properties?.["Column 5"]?.rich_text[0]?.plain_text ||
                 "Sem descrição",
               url_image:
-                item.properties?.["Column 6"]?.rich_text[0]?.plain_text ||
-                "/default-image.png",
+                item.properties?.["Column 6"]?.rich_text[0]?.plain_text || "/",
               href: item.url || "#",
             })),
           },

@@ -42,7 +42,7 @@ export default function HorizontalCard({
           src={img}
           alt="imagem do card"
           fill
-          className="rounded-lg object-cover"
+          className="rounded-lg object-contain"
         />
       </div>
       <div className="text-white font-orbitron flex flex-col gap-6 overflow-hidden">

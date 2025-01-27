@@ -28,6 +28,7 @@ export default function Card({
           src={img}
           alt="imagem do card"
           width={290}
+          objectFit="container"
           height={290}
           className="rounded-xl"
         />
