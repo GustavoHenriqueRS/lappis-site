@@ -55,7 +55,12 @@ export default function Formacao() {
           </div>
 
           <div className="flex w-[499px] h-[398px] rounded-xl overflow-hidden relative">
-            <Image src={formacao.url_image} alt="Imagem da formação" fill />
+            <Image
+              src={formacao.url_image}
+              alt="Imagem da formação"
+              className="object-contain"
+              fill
+            />
           </div>
         </div>
         <div className="flex flex-col w-full gap-6">
