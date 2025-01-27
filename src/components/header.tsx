@@ -64,11 +64,19 @@ export default function Header() {
     );
   }
 
+  function showConfettiFunc() {
+    console.log("show confetti");
+    setShowConfetti(!showConfetti);
+    setTimeout(() => {
+      setShowConfetti(false);
+    }, 5000);
+  }
+
   return (
     <div className="flex w-full h-24 px-12 sm:px-16 py-12 border-b-1 bg-[#F6F6F6] items-center fixed z-20 justify-between top-0 gap-10">
       <button
         className="absolute top-0 left-0 z-50 p-4"
-        onClick={() => setShowConfetti(!showConfetti)}
+        onClick={showConfettiFunc}
       />
       {showConfetti && (
         <Confetti
@@ -76,7 +84,6 @@ export default function Header() {
           particleCount={200}
           colors={["#ff577f", "#ff884b"]}
           shapeSize={20}
-          fadeOutHeight={10000}
         />
       )}
 
