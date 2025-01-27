@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Square from "./square";
 import SquareTitle from "./squareTitle";
 import { ChevronLeft, ChevronRight } from "./chevron";
@@ -33,7 +33,6 @@ interface SessionComponentProps {
 }
 
 const AnimatedSquare = createMotionComponent(Square, "AnimatedSquare");
-
 const AnimatedSquareTitle = createMotionComponent(
   SquareTitle,
   "AnimatedSquareTitle"
@@ -41,32 +40,25 @@ const AnimatedSquareTitle = createMotionComponent(
 
 export default function SessionComponent({ session }: SessionComponentProps) {
   const cards: Card[] = Object.values(session.cards);
-
   const containerRef = useRef<HTMLDivElement>(null);
-  const [cardsToShow, setCardsToShow] = useState(3);
   const [startIndex, setStartIndex] = useState(0);
-  const [maxIndex, setMaxIndex] = useState(0);
-  const [cardWidth, setCardWidth] = useState(0);
+  const [cardsToShow, setCardsToShow] = useState(3);
 
   useEffect(() => {
     const updateLayout = () => {
       const containerWidth = containerRef.current?.offsetWidth || 0;
-      const singleCardWidth = 312 + 56;
-      const visibleCards = Math.floor(containerWidth / singleCardWidth);
-
-      setCardsToShow(Math.max(visibleCards, 1));
-      setCardWidth(singleCardWidth);
-      setMaxIndex(Math.max(0, cards.length - visibleCards));
+      const visibleCards = containerWidth < 640 ? 1 : containerWidth < 1024 ? 3 : 4;
+      setCardsToShow(visibleCards);
     };
 
     updateLayout();
     window.addEventListener("resize", updateLayout);
     return () => window.removeEventListener("resize", updateLayout);
-  }, [cards.length]);
+  }, []);
 
   const handlePrev = () => setStartIndex((prev) => Math.max(prev - 1, 0));
   const handleNext = () =>
-    setStartIndex((prev) => Math.min(prev + 1, maxIndex));
+    setStartIndex((prev) => Math.min(prev + 1, cards.length - cardsToShow));
 
   return (
     <AnimatedSquare
@@ -74,7 +66,6 @@ export default function SessionComponent({ session }: SessionComponentProps) {
       whileInView={{ x: 0, opacity: 1 }}
       viewport={{ once: false, amount: 0.2 }}
       transition={{ duration: 0.5 }}
-      // className="p-8"
     >
       <AnimatedSquareTitle
         initial={{ opacity: 0 }}
@@ -84,43 +75,56 @@ export default function SessionComponent({ session }: SessionComponentProps) {
         title={session.title}
         color={session.cardColors}
       />
-      <div className="mt-24 md:mt-32">
-        <p className="text-2xl text-black font-notoSans">
+      <div className="mt-16 md:mt-24">
+        <p className="text-2xl text-black font-notoSans text-center">
           {session.description}
         </p>
       </div>
-      <div className="flex w-full items-center justify-center gap-16">
-        <div className="w-16">
+      <div className="flex items-center justify-center w-full mt-10 gap-8 px-4">
+        {/* Left Button */}
+        <div className="flex-shrink-0">
           {startIndex > 0 && (
-            <button onClick={handlePrev}>
+            <button
+              className="p-2 sm:p-1 text-2xl sm:text-xl bg-gray-200 rounded-full hover:bg-gray-300"
+              onClick={handlePrev}
+            >
               <ChevronLeft color={session.cardColors} />
             </button>
           )}
         </div>
-        <div ref={containerRef} className="overflow-hidden w-[80%] px-4">
+
+        {/* Cards Container */}
+        <div
+          ref={containerRef}
+          className="overflow-hidden w-[90%] flex justify-center"
+        >
           <div
-            className="flex transition-transform duration-300 gap-14"
+            className="flex gap-6 transition-transform duration-300"
             style={{
-              transform: `translateX(-${startIndex * cardWidth}px)`,
-              width: `${cards.length * cardWidth}px`,
+              transform: `translateX(-${startIndex * (312 + 24)}px)`,
             }}
           >
             {cards.map((card, index) => (
               <Card
+                key={index}
                 title={card.title}
                 description={card.description}
                 color={session.cardColors}
-                href={`${session.buttonLink}/${card.title}`}
                 hoverColor={session.hoverColor}
+                href={`${session.buttonLink}/${card.title}`}
                 img={card.url_image}
-                key={index}
               />
             ))}
           </div>
         </div>
-        <div className="w-16 ">
+
+        {/* Right Button */}
+        <div className="flex-shrink-0">
           {startIndex + cardsToShow < cards.length && (
-            <button onClick={handleNext}>
+            <button
+              className="p-2 sm:p-1 text-2xl sm:text-xl bg-gray-200 rounded-full hover:bg-gray-300"
+              onClick={handleNext}
+            >
               <ChevronRight color={session.cardColors} />
             </button>
           )}

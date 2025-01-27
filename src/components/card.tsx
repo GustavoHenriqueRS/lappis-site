@@ -20,20 +20,21 @@ export default function Card({
   href,
 }: CardProps) {
   return (
-    <Link href={href ? href : "#"}>
+    <Link href={href || "#"}>
       <div
-        className={`p-6 bg-${color} hover:bg-${hoverColor} text-white rounded-xl  flex flex-col items-center  text-center mt-9 h-card shadow-xl w-[312px] mb-8 hover:scale-110 duration-300 ease-in-out hover:shadow-custom transition-all `}
+        className={`p-6 bg-${color} hover:bg-${hoverColor} text-white rounded-xl flex flex-col items-center text-center shadow-xl hover:scale-105 transition-transform duration-300 w-[312px] h-[450px] sm:w-[280px] sm:h-[400px]`}
       >
         <Image
           src={img}
           alt="imagem do card"
-          width={290}
-          objectFit="container"
-          height={290}
+          width={250}
+          height={250}
           className="rounded-xl"
         />
-        <h1 className="text-2xl font-orbitron mt-6">{title}</h1>
-        <p className="font-notoSans mt-6 line-clamp-3">{description}</p>
+        <h1 className="text-xl sm:text-lg font-orbitron mt-6">{title}</h1>
+        <p className="font-notoSans mt-4 text-sm sm:text-xs line-clamp-3">
+          {description}
+        </p>
       </div>
     </Link>
   );

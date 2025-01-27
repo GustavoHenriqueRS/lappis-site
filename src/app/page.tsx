@@ -1,4 +1,8 @@
 "use client";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import logoGrande from "../app/public/logoGrande.png";
+import logoAntiga from "../app/public/logoAntiga.png";
 import SessionComponent from "@/components/sessionComponent";
 import Square from "@/components/square";
 import ListSessionComponent from "@/components/listSessionComponent";
@@ -18,21 +22,44 @@ export default function Home() {
 
   return (
     <div className="flex items-center justify-center flex-col gap-16 px-4 sm:px-8">
-      <Square className="p-3 sm:p-4 flex flex-col items-center gap-8 -z-30">
-        <div className="flex justify-center w-full h-[400px] sm:h-[500px] md:h-[700px] relative -z-20">
-          <video
-            className="rounded-[12px] w-full h-full object-cover -z-10"
-            autoPlay
-            loop
-            playsInline
-            muted
+      <Square className="p-6 sm:p-8 md:p-16 flex flex-col items-center gap-6 sm:gap-8 md:gap-12">
+        {/* Logos */}
+        <div className="flex flex-wrap justify-center gap-8 sm:gap-16 md:gap-24 font-notoSans">
+          <motion.div
+            whileHover={{ scale: 1.1, rotate: 3 }}
+            whileTap={{ scale: 0.9 }}
+            transition={{ type: "spring", stiffness: 300 }}
           >
-            <source
-              src="https://videos.pexels.com/video-files/3253971/3253971-uhd_2560_1440_25fps.mp4"
-              type="video/mp4"
+            <Image
+              src={logoGrande}
+              alt="Logo grande"
+              className="w-36 h-auto sm:w-52 md:w-[364px]"
             />
-          </video>
-          <button className="absolute bottom-4 sm:bottom-8 bg-primaria04 text-white text-base sm:text-lg md:text-2xl px-8 sm:px-12 md:px-16 py-3 sm:py-4 md:py-5 rounded-xl hover:bg-secundaria700Magenta font-notoSans">
+          </motion.div>
+          <motion.div
+            whileHover={{ scale: 1.1, rotate: -3 }}
+            whileTap={{ scale: 0.9 }}
+            transition={{ type: "spring", stiffness: 300 }}
+          >
+            <Image
+              src={logoAntiga}
+              alt="Logo antiga"
+              className="w-28 h-auto sm:w-44 md:w-[287px]"
+            />
+          </motion.div>
+        </div>
+
+        {/* Textos */}
+        <div className="text-black flex flex-col gap-6 sm:gap-8 md:gap-10 items-center font-notoSans">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl text-center">
+            Centro de competências em Software livre
+          </h1>
+          <p className="text-base sm:text-lg md:text-2xl text-center">
+            Acreditamos no poder do conhecimento compartilhado para transformar vidas.
+            Conecte-se, colabore e seja parte da mudança!
+          </p>
+          {/* Botão */}
+          <button className="font-notoSans bg-primaria04 text-white text-base sm:text-lg md:text-2xl px-8 sm:px-12 md:px-16 py-3 sm:py-4 md:py-5 rounded-xl hover:bg-secundaria700Magenta">
             Conhecer projetos
           </button>
         </div>
