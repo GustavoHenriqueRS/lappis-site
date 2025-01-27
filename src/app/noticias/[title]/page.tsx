@@ -34,21 +34,27 @@ export default function Page() {
   }, [noticia, name]);
 
   if (loading) return <div>Loading...</div>;
-  if (!noticiaData) return <div> Noticia não encontrada</div>;
+  if (!noticiaData) return <div> Notícia não encontrada</div>;
 
   return (
-    <div className="flex items-center justify-center flex-col gap-16">
-      <Square className=" text-black px-28 gap-12">
-        <SquareTitle title={"Notícias"} color={"primaria04"} />
+    <div className="flex items-center justify-center flex-col gap-8 md:gap-16 px-4 sm:px-8">
+      <Square className="text-black px-6 sm:px-10 md:px-28 gap-8 md:gap-12">
+        <SquareTitle title={"Notícias"} color={"primaria01"} />
 
-        <div className="mt-32">
-          <h1 className="text-4xl mb-6">{noticiaData.title}</h1>
-          <p className="text-2xl text-pretinho">{noticiaData.description}</p>
+        <div className="mt-24 md:mt-32 flex flex-col gap-6">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-notoSans">
+            {noticiaData.title}
+          </h1>
+          <p className="text-base sm:text-lg md:text-2xl text-pretinho leading-relaxed font-notoSans">
+            {noticiaData.description}
+          </p>
           <Image
             src={noticiaData.url_image}
             alt="galera"
-            width={100}
-            height={100}
+            width={0}
+            height={0}
+            sizes="100vw"
+            className="w-full h-auto rounded-lg mt-6 mb-6 sm:mb-8"
           />
         </div>
       </Square>
