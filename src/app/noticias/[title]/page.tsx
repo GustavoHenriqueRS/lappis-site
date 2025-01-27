@@ -41,20 +41,21 @@ export default function Page() {
       <Square className="text-black px-6 sm:px-10 md:px-28 gap-8 md:gap-12">
         <SquareTitle title={"Notícias"} color={"primaria01"} />
 
-        <div className="mt-24 md:mt-32 flex flex-col gap-6">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl font-notoSans">
+        <div className="mt-24 md:mt-32 flex flex-col gap-6 w-full">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-notoSans flex self-start">
             {noticiaData.title}
           </h1>
-          <p className="text-base sm:text-lg md:text-2xl text-pretinho leading-relaxed font-notoSans">
+          <p className="text-base sm:text-lg md:text-2xl text-pretinho leading-relaxed font-notoSans self-start">
             {noticiaData.description}
           </p>
           <Image
             src={noticiaData.url_image}
             alt="galera"
+            objectFit="contain"
             width={0}
             height={0}
             sizes="100vw"
-            className="w-full h-auto rounded-lg mt-6 mb-6 sm:mb-8"
+            className="w-full h-auto rounded-lg mt-6 mb-6 sm:mb-8 self-center"
           />
         </div>
       </Square>
