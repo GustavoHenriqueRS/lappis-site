@@ -30,7 +30,12 @@ export async function GET() {
   try {
     // Realizando as requisições para múltiplas databases simultaneamente
     const [headerData, formacoesData, parceriasData, pesquisaData, noticiaData, contatoData] = await Promise.all([
-      notionClient.databases.query({ database_id: databaseIds.header! }),
+      notionClient.databases.query({
+        database_id: databaseIds.header!, sorts: [{
+          property: "Order",
+          direction: "ascending"
+        }]
+      }),
       notionClient.databases.query({ database_id: databaseIds.formacoes! }),
       notionClient.databases.query({ database_id: databaseIds.parcerias! }),
       notionClient.databases.query({ database_id: databaseIds.pesquisa! }),
@@ -40,7 +45,7 @@ export async function GET() {
 
     // Retornando os dados como JSON
     return NextResponse.json({
-      header: headerData.results.reverse(),
+      header: headerData.results,
       formacoes: formacoesData.results,
       parcerias: parceriasData.results,
       pesquisa: pesquisaData.results,

@@ -72,6 +72,8 @@ export default function Header() {
     }, 5000);
   }
 
+  console.log(header);
+
   return (
     <div className="flex w-full h-24 px-12 sm:px-16 py-12 border-b-1 bg-[#F6F6F6] items-center fixed z-20 justify-between top-0 gap-10">
       <button

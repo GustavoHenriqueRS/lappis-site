@@ -143,6 +143,8 @@ export function NotionDataProvider({
       try {
         const notionData = await fetchAllNotionData();
 
+        console.log(notionData.header);
+
         setData({
           header: notionData.header.map((item: any) => ({
             title: item.properties?.Title?.title[0]?.plain_text || "Sem título",
