@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { useNotionData } from "../context/NotionDataContext";
+import Link from "next/link";
 
 interface INew {
   title: string;
@@ -36,12 +37,14 @@ export default function Contato() {
             </p>
             <div className="flex flex-col gap-3 sm:gap-4 mt-4 sm:mt-6">
               <div className="flex items-center gap-3 sm:gap-4">
-                <FontAwesomeIcon
-                  icon={faInstagram}
-                  className="text-secundaria700Azul text-2xl sm:text-3xl hover:opacity-80 cursor-pointer"
-                />
+                <Link href={news[1].instagram}>
+                  <FontAwesomeIcon
+                    icon={faInstagram}
+                    className="text-secundaria700Azul text-2xl sm:text-3xl hover:opacity-80 cursor-pointer"
+                  />
+                </Link>
                 <span className="text-base sm:text-lg md:text-xl">
-                  {news[1].instagram}
+                  LabLivre
                 </span>
               </div>
               <div className="flex items-center gap-3 sm:gap-4">
@@ -49,9 +52,7 @@ export default function Contato() {
                   icon={faLinkedin}
                   className="text-secundaria700Azul text-2xl sm:text-3xl hover:opacity-80 cursor-pointer"
                 />
-                <span className="text-base sm:text-lg md:text-xl">
-                  {news[1].linkedin}
-                </span>
+                <span className="text-base sm:text-lg md:text-xl">Lappis</span>
               </div>
               <div className="flex items-center gap-3 sm:gap-4">
                 <FontAwesomeIcon

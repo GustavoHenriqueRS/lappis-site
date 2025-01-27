@@ -155,16 +155,13 @@ export function NotionDataProvider({
               item.properties?.["Description"]?.rich_text?.[0]?.plain_text ||
               "Sem descrição",
             instagram:
-              item.properties?.["Instagram"]?.rich_text?.[0]?.plain_text ||
-              "/default-instagram.png",
+              item.properties?.["Instagram"]?.rich_text?.[0]?.plain_text || "",
             linkedin:
-              item.properties?.["Linkedin"]?.rich_text?.[0]?.plain_text ||
-              "/default-linkedin.png",
+              item.properties?.["Linkedin"]?.rich_text?.[0]?.plain_text || "",
             email:
               item.properties?.["Email"]?.rich_text?.[0]?.plain_text ||
               "Sem email",
           })),
-
           formacoes: {
             title: "Formações",
             buttonLink: "/formacao",
