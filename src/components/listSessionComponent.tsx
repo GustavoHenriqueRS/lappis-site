@@ -73,7 +73,7 @@ export default function ListSessionComponent({
         color={listSession.cardColors}
       />
       <div className="mt-32"></div>
-      <div className="mt-12 flex flex-col gap-8 items-center 2xl:grid 2xl:grid-cols-2 2xl:gap-12 2xl:w-4/5">
+      <div className="mt-12 flex flex-col gap-8 items-center 2xl:gap-12 2xl:w-4/5">
         {visibleCards.map((horizontalCard, index) => (
           <HorizontalCard
             key={index}
